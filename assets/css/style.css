@@ -20,7 +20,8 @@ body{
 
 .nav {
 	 width: 20%;
-     height: 100vh;
+     height: 100vh; 
+     background-color: #465d77; 
      position: fixed;
      bottom: 0;
      left: 0;
@@ -33,7 +34,6 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center; 
-    background-color: #465d77; 
     gap:2rem;
 }
 
@@ -142,25 +142,67 @@ body{
     border-radius: 50%; 
 }
  
-#sobre-mim{}
-#habilidades{}
-#portfolio{}
-
-.active{
-    display: block;
+#sobre-mim{
+    flex-direction: column;
+    padding: 3rem;
+    justify-content: center;
+    align-items: center;
 }
 
-.desativa{
-    display: none;
+.sobre-mim__titulo{
+    text-align: center;
 }
 
+.sobre-mim__descricao{
+    display: flex;
+    gap: 1.5rem;
+    
+}
+
+.sobre-mim__img{
+    width: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    position: relative;
+    box-sizing: border-box;
+}
+
+.sobre-mim__img__portfolio{
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%; 
+}
+
+.sobre-mim__paragrafo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+ 
+#habilidades{
+    flex-direction: column;
+    padding: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+#portfolio{
+    flex-direction: column;
+    padding: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+ 
 .footer {
     width: 80%;
     height: 10vh;
     position: fixed;
     bottom: 0;
-    right: 0;
-    background-color: rgb(19, 27, 2); 
+    right: 0; 
+    background-color: #465d77;  
 }
  
 
