@@ -188,6 +188,75 @@ body{
     align-items: center;
 }
 
+.habilidade__grid{ 
+    width: 90%;
+    height: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-areas: "html5 html5 sql-serve sql-serve kanban react react"
+                         "html5 html5 sql-serve sql-serve kanban react react"
+                         "html5 html5 c-sharp c-sharp c-sharp react react"
+                         "scrum git c-sharp c-sharp c-sharp javascript javascript"
+                         "scrum git c-sharp c-sharp c-sharp javascript javascript"
+                         "scrum git asp-net-core net net  css3 css3"
+                         "jquery jquery asp-net-core net net css3 css3"
+                         
+
+    ;
+    
+    grid-gap: 1rem;  
+}
+
+.habilidade__grid__html5{
+    grid-area: html5;
+    background-color: aqua; 
+} 
+.habilidade__grid__css3{
+    grid-area: css3;
+    background-color: rgb(26, 63, 63);
+} 
+.habilidade__grid__javascript{
+    grid-area: javascript;
+    background-color: rgb(112, 163, 78);
+}
+.habilidade__grid__react{
+    grid-area: react;
+    background-color: rgb(202, 175, 116);
+}
+.habilidade__grid__c-sharp{
+    grid-area: c-sharp;
+    background-color: rgb(213, 202, 214);
+}
+.habilidade__grid__asp-net-core{
+    grid-area: asp-net-core;
+    background-color: rgb(109, 101, 128);
+} 
+.habilidade__grid__net{
+    grid-area: net;
+    background-color: rgb(231, 184, 188);
+} 
+.habilidade__grid__git{
+    grid-area: git;
+    background-color: rgb(195, 224, 28);
+} 
+.habilidade__grid__scrum{
+    grid-area: scrum;
+    background-color: rgb(230, 105, 21);
+}
+.habilidade__grid__kanban{
+    grid-area: kanban;
+    background-color: rgb(165, 101, 133);
+}
+.habilidade__grid__sql-serve{
+    grid-area: sql-serve;
+    background-color: rgb(40, 63, 10);
+}
+.habilidade__grid__jquery{
+    grid-area: jquery;
+    background-color: rgb(4, 4, 44);
+}
+
 #portfolio{
     flex-direction: column;
     padding: 3rem;
