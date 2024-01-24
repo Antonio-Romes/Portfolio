@@ -13,28 +13,36 @@
 }
 
 body{
-    width: 100%;
-    height: 100vh;  
-    display: flex;   
+    background-color: var(--cor-fundo);
+    color: var(--cor-branco);
+    display: flex;
+    flex-direction: column;
+} 
+
+.conteudo{
+    position: relative;
 }
 
 .nav {
-	 width: 20%;
-     height: 100vh; 
-     background-color: #465d77; 
-     position: fixed;
-     bottom: 0;
-     left: 0;
-       
+	 width: 100%;  
+     height: 4rem;
+     background-color: #465d77;  
+     display: flex; 
+     justify-content: center; 
+     align-items: center;
+     padding: 1.5rem 0rem;   
+     position: sticky;
+     top: 0;
+     z-index: 1;
 } 
 
 .nav__lista{
-    width: 100%;
+    width: 80%; 
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    gap:2rem;
+    display: flex; 
+    justify-content: end; 
+    align-items: center;
+    gap: 1rem; 
 }
 
 .nav__lista__li{
@@ -43,277 +51,17 @@ body{
 
 .nav__lista__link{
    text-decoration: none;
-   font-size: 2rem;
-   position: relative;
-   top: 0;
-   left: -10%;
-   z-index: 2;
+   font-size: 2rem; 
    color: white;
 }
-
-.nav_destaque{
-    font-size: 6rem;
-    position: relative;
-    top: 0;
-    left: 20%;
-    color: rgb(240, 248, 255,0.2);
-}
-
-.content{
-    width: 80%;
-    height: 100vh;  
-    position: relative;
-    top: 0;
-    left: 20%;
-}
-
-.main {
-    width: 100%;
-    height: 90vh;   
-    overflow: hidden;
-} 
-
-#home,#sobre-mim,#habilidades,#portfolio {
-    width: 100%;
-    height: 92vh;
-    display: flex;   
-}
-
-.home__descricao{
-    width: 50%; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap:2rem
-}
-
-.home__descricao__texto{
-    border-left: 5px solid #000;
-    padding-left: .8rem;
-    width: 90%;
-}
-
-
-.home__descricao__paragrafo{
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-.home__descricao__titulo{
-    font-size: 4rem;
-    line-height: 3rem;
-}
-
-.home__descricao__destaque{
-    font-size: 3rem;
-}
-
-.home__descricao__Links{
-    display: flex;
-    justify-content: center; 
-    width: 89%;
-    gap:1rem; 
-}
-
-.home__descricao__Links__a{
-    text-decoration: none;
-    background-color: aquamarine;
-    width: 10rem;
-    text-align: center; 
-    border-radius: .8rem;
-    padding: 1rem 0rem;
-    font-size: 1.2rem;
-}
-
-.home__img{
-    width: 50%;
-    height: 92vh;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    position: relative;
-    box-sizing: border-box;
-}
-
-.home__img__portfolio{
-    width: 25rem;
-    height: 25rem;
-    border-radius: 50%; 
-}
- 
-#sobre-mim{
-    flex-direction: column;
-    padding: 3rem;
-    justify-content: center;
-    align-items: center;
-}
-
-.sobre-mim__titulo{
-    text-align: center;
-}
-
-.sobre-mim__descricao{
-    display: flex;
-    gap: 1.5rem;
-    
-}
-
-.sobre-mim__img{
-    width: 50%; 
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    position: relative;
-    box-sizing: border-box;
-}
-
-.sobre-mim__img__portfolio{
-    width: 25rem;
-    height: 25rem;
-    border-radius: 50%; 
-}
-
-.sobre-mim__paragrafo{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-}
- 
-#habilidades{
-    flex-direction: column;
-    padding: 3rem;
-    justify-content: center;
-    align-items: center;
-}
-
-.habilidade__grid{ 
-    width: 90%;
-    height: 70%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
-    grid-template-areas: "html5 html5 sql-serve sql-serve kanban react react"
-                         "html5 html5 sql-serve sql-serve kanban react react"
-                         "html5 html5 c-sharp c-sharp c-sharp react react"
-                         "scrum git c-sharp c-sharp c-sharp javascript javascript"
-                         "scrum git c-sharp c-sharp c-sharp javascript javascript"
-                         "scrum git asp-net-core net net  css3 css3"
-                         "jquery jquery asp-net-core net net css3 css3"
-                         
-
-    ;
-    
-    grid-gap: 1rem;  
-}
-
-.habilidade__grid__html5{
-    grid-area: html5;
-    background-color: aqua; 
-} 
-.habilidade__grid__css3{
-    grid-area: css3;
-    background-color: rgb(26, 63, 63);
-} 
-.habilidade__grid__javascript{
-    grid-area: javascript;
-    background-color: rgb(112, 163, 78);
-}
-.habilidade__grid__react{
-    grid-area: react;
-    background-color: rgb(202, 175, 116);
-}
-.habilidade__grid__c-sharp{
-    grid-area: c-sharp;
-    background-color: rgb(213, 202, 214);
-}
-.habilidade__grid__asp-net-core{
-    grid-area: asp-net-core;
-    background-color: rgb(109, 101, 128);
-} 
-.habilidade__grid__net{
-    grid-area: net;
-    background-color: rgb(231, 184, 188);
-} 
-.habilidade__grid__git{
-    grid-area: git;
-    background-color: rgb(195, 224, 28);
-} 
-.habilidade__grid__scrum{
-    grid-area: scrum;
-    background-color: rgb(230, 105, 21);
-}
-.habilidade__grid__kanban{
-    grid-area: kanban;
-    background-color: rgb(165, 101, 133);
-}
-.habilidade__grid__sql-serve{
-    grid-area: sql-serve;
-    background-color: rgb(40, 63, 10);
-}
-.habilidade__grid__jquery{
-    grid-area: jquery;
-    background-color: rgb(4, 4, 44);
-}
-
-#portfolio{
-    flex-direction: column;
-    padding: 3rem;
-    justify-content: center;
-    align-items: center;
-}
-
- 
-.footer {
-    width: 80%;
-    height: 10vh;
-    position: fixed;
-    bottom: 0;
-    right: 0; 
-    background-color: #465d77;  
-}
- 
-
-/* body{
-    background-color: var(--cor-fundo);
-    color: var(--cor-branco);
-} */
-
-/* Seção cabeçalho */
-/* .header{
-    width: 100%;
-    height: 8vh; 
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-}
-
-.header__nav{
-    width: 80%;
-}
-
-.header__nav__ul{ 
-    display: flex;
-    justify-content: end;
-    gap: 1rem; 
-    text-decoration: none;
-    list-style-type: none;
-    padding-right: 1rem;
-}
- 
-.header__nav__link {
-    text-decoration: none;
-    font-size: 1.5rem;  
-}
-
-
+  
 
 /* Seção home */
-/*#home{
-    width: 100%;
-    height: 92vh;
-    display: flex; 
+#home{
+    width: 100%; 
+    height: 100vh;
+    display: flex;  
+    padding: 3rem; 
 }
 
 .home__descricao{
@@ -321,7 +69,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     gap:2rem
 }
 
@@ -358,9 +106,8 @@ body{
     width: 50%;
     height: 92vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #000;
+    justify-content: start;
+    align-items: center; 
     position: relative;
     box-sizing: border-box;
 }
@@ -370,11 +117,262 @@ body{
     height: 30rem;
     border-radius: 50%;
 }
-*/
+
  
 /* seção sobre mim */ 
-/*#about{
+#sobre-mim{ 
+    width: 100%;  
+    background-color: blue; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   
+} 
+
+.sobre-mim__titulo{ 
+    text-align: center;
+}
+
+.sobre-mim__descricao{
+    width: 100%; 
+    display: flex ; 
+    gap: 1.5rem;
+    background-color: #8ab494;
+}
+
+.sobre-mim__img{
+    width: 50%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: #465d77;
+}
+
+.sobre-mim__img__portfolio{
+    width: 50%; 
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    box-sizing: border-box; 
+    border-radius: 50%;
+}
+
+.sobre-mim__paragrafo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   
+}
+
+#habilidades{
     width: 100%;
     height: 100vh;
-    background-color: blue;
-} */
+    display: flex;  
+    flex-direction: column;  
+    align-items: center;
+}
+
+.habilidade__titulo{
+    text-align: center;
+}
+
+.habilidade__grid{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.habilidade__box{
+    border: 1px solid #000; 
+    width: 8rem;
+    height: 10rem;
+    padding: .5rem;
+}
+
+
+#portfolio{
+    width: 100%;
+    height: 100vh;
+    display: flex;  
+    flex-direction: column;  
+    align-items: center;
+}
+
+.portfolio__titulo{
+    text-align: center;
+}
+
+.portfolio__box{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    
+}
+
+ 
+.card {
+    position: relative;
+    width: 315px;
+    height: 450px;
+    margin: 30px auto;
+    box-shadow: 0 0 100px rgba(0,0,0, .3);
+    border-radius: 10px;
+  }
+  
+  .card-header {
+    position: relative;
+    height: 220px;
+    background-size: cover;
+    background-position: top;
+  }
+  
+  .card-header:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgb(5,85,134), rgba(181,181,181, -0.20));
+    border-radius: 10px;
+  }
+  
+  .image {
+    position: absolute;
+    margin-top: 100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #222;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  
+  .card-header-bar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    width: 100%;
+  }
+  
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(0,0,0,0);
+    border: none;
+    overflow: hidden;
+  }
+  
+  .btn-message {
+    display: inline-block;
+    width: 19.37px;
+    height: 16.99px;
+    margin-right: 10px;
+    margin-top: 10px;
+    float: right;
+  }
+  
+  .btn-menu {
+    display: inline-block;
+    background: width: 19px;
+    height: 12.16px;
+    margin-left: 10px;
+    margin-top: 10px;
+    float: left;
+  }
+  
+  .card-header-slanted-edge {
+    position: absolute;
+    bottom: -3px;
+    z-index: 1;
+    width: 100%;
+    right: 0;
+    left: 0;
+  }
+  
+  .card-body {
+    text-align: center;
+    padding-left: 10px;
+  }
+  
+  .name {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 auto;
+  }
+  
+  .job-title {
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 15px;
+    color: #919191;
+  }
+  
+  .bio {
+    font-size: 14px;
+    color: #7B7B7B;
+    font-weight: 300;
+    margin: 10px auto;
+    line-height: 20px;
+  }
+  
+  .social-accounts img {
+    width: 15px;
+  }
+  
+  .social-accounts a {
+    margin-left: 10px;
+  }
+  
+  .social-accounts a:first-child {
+    margin-left: 0;
+  }
+  
+  .card-footer {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 20px;
+  }
+  
+  .stat {
+    box-sizing: border-box;
+    width: calc(100% / 3);
+    float: left;
+    text-align: center;
+  }
+  
+  .stat:nth-child(2) {
+    border-left: 1px solid grey;
+  }
+  
+  .stat:nth-child(3) {
+    border-left: 1px solid grey;
+  }
+  
+  .stat .label {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #95989A;
+  }
+  
+  .stat .value {
+    display: block;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 5px;
+  }
+
+.footer{
+    width: 100%;
+    height: 10rem;
+    background-color: #000;
+    color: #fff;
+}
