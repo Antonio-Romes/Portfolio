@@ -216,7 +216,7 @@ body{
 
 
 #projeto{
-    height: 100vh;
+    height: 100%;
     background-color: var(--color-primeira);
     padding: 15vh 0 12vh 0;  
     display: flex; 
@@ -236,26 +236,35 @@ body{
     display: flex; 
     gap: 1rem;
     padding: 2rem 1rem;
+    justify-content: center; 
+    flex-wrap: wrap;
+    height: 100%;
 }
+ 
 
 .projeto__card {  
     position: relative;
     width: 22rem;
-    height:20rem;
-    background-color: #f2f2f2;
+    height:21rem;
+    background-color: var(--color-segunda);
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden; 
-    box-shadow: 0 0 0 5px #ffffff80;
+    box-shadow: 0 0 0 5px #ffffff;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
   
+  .projeto__card > img{
+    width: 100%;
+    height: 90%;
+  }
   
   
   .projeto__card:hover {
-    transform: scale(1.05);
+    z-index: 2;
+    transform: scale(1.2);
     box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
   }
   
@@ -267,7 +276,7 @@ body{
     height: 100%;
     padding: 20px;
     box-sizing: border-box;
-    background-color: #f2f2f2;
+    background-color: var(--color-segunda);
     transform: rotateX(-90deg);
     transform-origin: bottom;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -280,14 +289,14 @@ body{
   .card__title {
     margin: 0;
     font-size: 24px;
-    color: #333;
+    color: var(--texto-branco);
     font-weight: 700;
   } 
   
   .card__description {
     margin: 10px 0 0;
     font-size: 14px;
-    color: #777;
+    color: var(--texto-branco);
     line-height: 1.4;
   }
   .projeto__tecnologia{
@@ -295,9 +304,27 @@ body{
     justify-content: center;
     margin: 1rem 0;
   }
+
+  
   .projeto__icon__imagem{
-    width: 5%;
-    height: 5%;
+    width: 6%;
+    height: 6%;
+    color: #fff;
+    padding: .2rem;
+    background-color: #ffffff;
+  }
+
+  .projeto__box__link{
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+    background-color:var(--color-terceira);
+    padding: .2rem 0;
+    border-radius: .5rem;
+  }
+  .projeto__link{ 
+    font-size: .8rem;
+    color: var(--texto-branco);
   }
   
 
