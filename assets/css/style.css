@@ -38,7 +38,14 @@ body{
     background-color: var(--color-segunda); 
     z-index: 1;
 }
- 
+
+.nav__link{
+    color: var(--texto-branco);
+}
+
+.nav__link:hover{
+    color: var(--texto-branco);
+}
 
 #home{
     height: 100vh;
@@ -46,7 +53,7 @@ body{
 }
 
 .home__conteudo{
-    height: 100%; 
+    height: 90%; 
     display: flex;  
     align-items: end;
     font-size: 1.5rem;
@@ -85,7 +92,7 @@ body{
     gap: 1.5rem;
 }
 
-.home__botoes__botao{
+.home__botoes__botao, .home__botoes__link{
     font-size: 1rem;
     padding: .1rem 1rem;
     border-radius: .8rem;
@@ -93,8 +100,9 @@ body{
     color: var(--texto-branco);
     border-color: var(--texto-branco);
     font-weight: 500;
+    text-decoration: none;
 } 
-
+ 
 .home__imagem{
     display: flex; 
 }
