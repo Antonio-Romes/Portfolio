@@ -157,7 +157,7 @@ body{
     text-decoration: underline;
 }
 
-.circle {
+.sobre-mim__circulo {
     width: 100px;
     height: 100px;
     background: radial-gradient(var(--color-sete), var(--color-quinta));
@@ -168,39 +168,57 @@ body{
     opacity: .3;
   }
   
-  .circle:nth-child(1) {
+  .sobre-mim__circulo:nth-child(1) {
     top: -25px;
     left: -25px;
   }
   
-  .circle:nth-child(2) {
+  .sobre-mim__circulo:nth-child(2) {
     bottom: -25px;
     right: -25px;
     animation-name: move-down;
   }
   
-  @keyframes move-up {
-    to {
-      transform: translateY(-56px);
-    }
-  }
-  
-  @keyframes move-down {
-    to {
-      transform: translateY(56px);
-    }
-  }
+ 
 
 #habilidade{
-    padding: 15vh;
+    height: 100vh;
+   padding: 15vh 0 12vh 0;  
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
+
+.habilidade__titulo{
+    text-align: center;
+    border-bottom:4px solid var(--texto-branco);
+    border-width: .3rem;
+    width: 30%;
+    padding-bottom: .2rem ;
+}
+
+.habilidade__box{
+    width: 70%;
+    height: 100%; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem; 
+}
+
+.habilidade__icon-imagem{
+    width: 20%;
+    height: 20%;
+    background-color: var(--texto-branco);
+    padding: 1rem .5rem;
+}
+
+
 #projeto{
     padding: 15vh;
 }
-
-.modal-body__box{
-   height: 25rem; 
-}
+ 
 
 @media screen and (max-width: 480px) {
 	#home {
@@ -228,3 +246,16 @@ body{
     }
      
 }
+
+
+@keyframes move-up {
+    to {
+      transform: translateY(-56px);
+    }
+  }
+  
+  @keyframes move-down {
+    to {
+      transform: translateY(56px);
+    }
+  }
