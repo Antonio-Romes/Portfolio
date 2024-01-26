@@ -407,17 +407,17 @@ body{
 
    
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 576px) {
 	#home {
-		background: #796c6c; 
-        padding: 6rem 1rem 1rem 1rem;
-
+		background-color: var(--color-segunda); 
+        height: 100vh; 
 	}
     .home__conteudo{
         flex-direction: column-reverse;
         width: 100%; 
+        padding-top: 21rem;
     }
-
+ 
     .home__descricao{
         width: 100%;
         height: 100%; 
@@ -431,8 +431,126 @@ body{
         width: 100%;
         justify-content: center;
     }
-     
     
+    .home__descricao__box{
+        border-left: .5rem solid var(--texto-branco);
+        padding: .2rem 0 0 .8rem; 
+    }
+
+    .home__destaque__nome{
+        font-size: 3rem;
+    }
+    .home__destaque{
+        font-size: 2rem;
+    }
+
+    .home__botoes{
+        width: 85%;  
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+ 
+    .sobre-mim__box{
+        height: 100%; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .sobre-mim__titulo{
+        text-align: center;
+        border-bottom:4px solid var(--texto-branco);
+        border-width: .3rem;
+        width: 50%;
+        padding-bottom: .2rem ;
+        margin-bottom: 1rem;
+    }
+
+    .sobre-mim__box__efeito{
+        border-left: .5rem solid var(--texto-branco);
+        padding: .1rem 0 0 .5rem;
+        width:100%;
+        font-size: 1.2rem;
+        text-indent: 1.5em; 
+        transition: all 0.2s;
+        background: rgba(255,255,255,.05);
+        box-shadow: 0 0 10px rgba(0,0,0,0.25);
+        backdrop-filter: blur(10px);
+        border-radius: 8px;
+        position: relative;  
+    }
+
+    .habilidade__icon-imagem{
+        width: 28%; 
+        background-color: var(--texto-branco);
+        padding: 1rem .5rem;
+    }
+
+    .projeto__box{
+        display: flex; 
+        gap: 1rem;
+        padding: 2rem 1rem;
+        justify-content: center; 
+        flex-wrap: wrap;
+        height: 100%;
+        gap: 2rem;
+    }
+
+    .footer{
+        width: 100%;
+        height: 15rem;
+        display: flex; 
+        flex-direction: column-reverse;
+      }
+
+      .footer__box__descricao{
+        width: 100%; 
+        padding: .5rem;
+      }
+
+      .footer__box__descricao p{
+        text-align: center;
+      }
+
+      .footer__box__icon{
+        width: 100%;   
+        height: 100%; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .footer__contato__box{
+        display: flex;  
+        flex-direction: column;
+      }
+    
+      .footer__subtitulo{
+        font-size: 1.2rem;
+        padding: 0 .5rem;
+      }
+    
+      .footer__descricao{ 
+        line-height: .2rem;
+        padding: .5rem 0rem 0rem .5rem;
+        
+        border-left: 5px solid var(--texto-branco);
+      }
+    
+      .footer__icon{
+        width: 30%;
+        height: 30%; 
+        display: flex;
+        justify-content: space-around;
+      }
+    
+      .footer__link__rede-social{
+        color: var(--texto-branco);
+        width: 100%;
+        height: 100%;  
+      }
 }
 
 
