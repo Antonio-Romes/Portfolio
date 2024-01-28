@@ -76,7 +76,12 @@
     width: 100%; 
 }
 
-  
+.home__link:hover{
+    background-color: var(--cor-sexta);
+    color: var(--cor-primeira);
+}
+
+
 
 .home__box__description{
     border-left: .5rem solid var(--cor-sexta);
@@ -101,6 +106,62 @@
     height: 100vh;
     background-color: var(--cor-terceira); 
 }
+
+
+.about__box{
+    width: 100%;
+    height: 50%;
+}
+
+.about__subtitle{
+    height: 2rem; 
+}
+
+.about__description{
+    border-left: .5rem solid var(--cor-sexta);
+    padding: .1rem 0 0 .5rem;
+    width: 60%;
+    font-size: 1.2rem;
+    text-indent: 1.5em; 
+    transition: all 0.2s;
+    background: rgba(255,255,255,.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    position: relative;
+}
+
+.about__circulo {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(#fff, #6fffe9);
+    border-radius: 50%;
+    position: absolute;
+    animation: move-up 3s ease-in infinite alternate-reverse;
+    z-index: -10;
+    opacity: .3;
+  }
+  
+  .about__circulo:nth-child(1) {
+    top: -25px;
+    left: -25px;
+  }
+  
+  .about__circulo:nth-child(2) {
+    bottom: -25px;
+    right: -25px;
+    animation-name: move-down;
+  }
+  .about__box{
+    width: 80%; 
+} 
+
+
+.about__description{
+    width: 50%;
+}
+
+
 #skill{
     width: 100%;
     height: 100vh;
@@ -146,6 +207,14 @@
         width: 30rem;
         height: 30rem; 
     }
+    .about__box{
+        width: 90%; 
+    } 
+
+
+    .about__description{
+        width: 60%;
+    }
 }
 
 @media screen and (max-width: 1200px){
@@ -174,6 +243,15 @@
     .home__imagem__portiflio {
         width: 30rem;
         height: 30rem; 
+    }
+
+    .about__box{
+        width: 90%; 
+    } 
+
+
+    .about__description{
+        width: 70%;
     }
 }
 
@@ -204,6 +282,14 @@
         width: 25rem;
         height: 25rem; 
     }
+    .about__box{
+        width: 100%; 
+    } 
+
+
+    .about__description{
+        width: 78%;
+    }
 }
 
 @media screen and (max-width: 768px){
@@ -233,7 +319,14 @@
         width: 12rem;
         height: 12rem; 
     }
-     
+    .about__box{
+        width: 100%; 
+    } 
+
+
+    .about__description{
+        width: 98%;
+    }
 }
 
 @media screen and (max-width: 576px){
@@ -258,6 +351,19 @@
     .home__imagem__portiflio {
         width: 10rem;
         height: 10rem; 
-    }
+    } 
 }
 
+
+
+@keyframes move-up {
+    to {
+      transform: translateY(-56px);
+    }
+  }
+  
+  @keyframes move-down {
+    to {
+      transform: translateY(56px);
+    }
+  }
