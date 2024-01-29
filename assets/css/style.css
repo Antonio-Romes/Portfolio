@@ -266,87 +266,73 @@
 /*SEÇÃO PROJETOS*/ 
 #project{
     width: 100%;  
-    height: 100vh;
+    height: 100%;
     display: flex; 
     justify-content: center;
     align-items: center; 
     background-color: var(--cor-segunda); 
+    padding-top: 3rem;
 } 
 
 .project__container{
-    width: 96%;
-    height: 80%;  
+    width: 96%;  
     display: flex; 
     flex-direction: column;
     justify-content: center;
-    align-items: center; 
+    align-items: center;  
 }
 
-.project__card {  
-    position: relative;
-    width: 22rem;
-    height:21rem;
-    background-color: var(--color-segunda);
-    border-radius: 10px;
+.project__box{ 
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
     display: flex;
-    align-items: center;
     justify-content: center;
-    overflow: hidden; 
-    box-shadow: 0 0 0 5px #ffffff;
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
-
-  .project__card > img{
-    width: 100%;
-    height: 90%;
-  }
-
-
-  .project__card:hover {
-    z-index: 2;
-    transform: scale(1.2);
-    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
-  }
-
-  .project__content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: var(--color-segunda);
-    transform: rotateX(-90deg);
-    transform-origin: bottom;
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
-
-  .project__card:hover .card__content {
-    transform: rotateX(0deg);
-  }
-
-  .project__title {
-    margin: 0;
-    font-size: 24px;
-    color: var(--cor-sexta);
-    font-weight: 700;
-  } 
-  .project__box{
-    display: flex; 
-    gap: 1rem;
-    padding: 2rem 1rem;
-    justify-content: center; 
     flex-wrap: wrap;
-    height: 100%;
-  }
+    gap: 2rem;
+}
 
-  .project__description {
-    margin: 10px 0 0;
-    font-size: 14px;
+.project__card{
+    width: 20rem;
+    height: 35rem; 
+    border-radius: .5rem;
+    padding: .2rem;
+    background-color: var(--cor-primeira)
+}
+
+.project__titulo{
+    font-size: 3rem;
+    margin-bottom: 5%;
+    border-bottom: .4rem solid var(--cor-sexta);
+}
+
+.project__subtitulo{
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+    border-bottom: 2px  solid var(--cor-sexta); 
+
+}
+
+.project__imagem{ 
+    width: 19.56rem;
+    height:  14.43rem;
+    border-radius: .3rem;
+}
+
+.project__descricao{ 
+    height: 9rem;
+    margin-top: .5rem;
+    border-radius: .3rem;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    overflow: hidden;
+    overflow-y: auto; 
+    text-indent: 1em;
     color: var(--cor-sexta);
-    line-height: 1.4;
-  }
+    background-color:rgba(255,255,255,.05);
+    padding: .2rem;
+}  
 
   .project__tecnologia{
     display: flex;
@@ -356,20 +342,20 @@
 
 
   .project__icon__imagem{
-    width: 6%;
-    height: 6%;
-    color: #fff;
-    padding: .2rem;
-    background-color: #ffffff;
+    width: 10%;  
+    padding: .2rem; 
+    border-radius: .3rem;
+    margin: 0 .3rem;
+    background-color:  rgb(244, 236, 255,.5);
   }
 
   .project__box__link{
     display: flex;
     justify-content: space-around; 
-    align-items: center;
-    background-color:var(--color-terceira);
+    align-items: center; 
     padding: .2rem 0;
     border-radius: .5rem;
+    background-color:rgba(255,255,255,.05);
   }
 
   .project__link{ 
@@ -461,6 +447,17 @@
         height: 80%; 
     }
     
+    /*SEÇÃO PROJETOS*/
+    .project__card{
+        width: 18rem;
+        height: 35rem; 
+        border-radius: .5rem;
+        padding: .2rem;
+        background-color: var(--cor-primeira)
+    }
+    .project__box{ 
+        gap: .5rem;
+    }
 }
 
 
@@ -537,6 +534,21 @@
         width: 90%;
         height: 80%; 
         }
+    
+    /*SEÇÃO PROJETOS*/
+    .project__card{
+        width: 25rem;
+        height: 38rem; 
+        border-radius: .5rem;
+        padding: .2rem;
+        background-color: var(--cor-primeira)
+    }
+    .project__box{ 
+        gap: 1rem;
+    }
+
+      
+     
 }
 
 @media screen and (max-width: 576px){
