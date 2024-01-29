@@ -44,6 +44,10 @@
     color: var(--cor-quinta);;
 }
 
+.header{
+    width: 100%;
+    position: fixed;
+}
 
 #nav{
     width: 100%; 
@@ -143,8 +147,97 @@
     height: 40%;
 }
 
+/* SEÇÃO SOBRE-MIM*/
+#about{
+    width: 100%;  
+    height: 100vh;
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    background-color: var(--cor-segunda); 
+} 
+
+.about__container{
+    width: 96%;
+    height: 80%;  
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+.about__subtitle{
+    font-size: 3rem;
+    margin-bottom: 5%;
+    border-bottom: .4rem solid white;
+}
+
+.about__box{
+    width: 100%;
+    height: 100%; 
+    display: flex;
+    justify-content: center;
+} 
+
+
+
+.about__description{
+    border-left: .5rem solid var(--cor-sexta);
+    padding: 1rem 0 0 .5rem;
+    width: 50%;
+    height: 80%;
+    font-size: 1.2rem;
+    text-indent: 1.5em; 
+    transition: all 0.2s;
+    background: rgba(255,255,255,.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    position: relative;
+}
+
+.about__circulo {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(#fff, #6fffe9);
+    border-radius: 50%;
+    position: absolute;
+    animation: move-up 3s ease-in infinite alternate-reverse;
+    z-index: -10;
+    opacity: .3;
+  }
+  
+  .about__circulo:nth-child(1) {
+    top: -25px;
+    left: -25px;
+  }
+  
+  .about__circulo:nth-child(2) {
+    bottom: -25px;
+    right: -25px;
+    animation-name: move-down;
+  }
+.about__paragrafo{
+    font-size: 1rem;
+}
+.about__destaque{
+    font-size: 1.5rem;
+}
+
+/*SEÇÃO HABILIDADES*/
+#skill{ } 
+
+/*SEÇÃO PROJETOS*/
+#project{} 
+
 @media screen and (max-width: 1400px){
     
+    /* SEÇÃO SOBRE-MIM*/
+
+    .about__description{ 
+        width: 60%;
+        height: 80%; 
+        }
 }
 
 @media screen and (max-width: 1200px){
@@ -164,6 +257,12 @@
         width: 60%;
         height: 40%;
     }
+
+    /* SEÇÃO SOBRE-MIM*/
+    .about__description{ 
+        width: 70%;
+        height: 80%; 
+        }
     
 }
 
@@ -175,7 +274,12 @@
         font-size: 2.5rem;
     }
 
-   
+   /* SEÇÃO SOBRE-MIM*/
+
+   .about__description{ 
+    width: 80%;
+    height: 80%; 
+    }
      
 }
 
@@ -217,6 +321,13 @@
         width: 35%;
         height: 50%;
     }
+
+     /* SEÇÃO SOBRE-MIM*/
+    
+    .about__description{ 
+        width: 90%;
+        height: 80%; 
+        }
 }
 
 @media screen and (max-width: 576px){
@@ -242,6 +353,15 @@
         width: 40%;
         height: 50%;
     }
+
+    /* SEÇÃO SOBRE-MIM*/
+    .about__description{ 
+        width: 98%;
+        height: 80%; 
+        padding: auto .2rem;
+        overflow: hidden;
+        overflow-y: scroll;
+        }
 }
 
 
