@@ -99,6 +99,24 @@
     margin: 0;
 }
 
+.home__paragrafo .type-text{
+    font-weight: normal; 
+}
+
+.home__paragrafo .cursor{
+    display: inline-block; 
+    margin-left: 0.1rem; 
+    width: 3px;
+    height: 50px;
+    animation: blink 1s infinite;
+    position: relative;
+    top: -25px;
+}
+
+.home__paragrafo .cursor.typing{
+    animation: none;
+}  
+
 .home__destaque__nome{
     font-size: 4rem;
 }
@@ -697,241 +715,6 @@
 }
 
 
-
- 
-/*
-   
-#about{
-    width: 100%;
-    height: 100vh;
-    background-color: var(--cor-terceira); 
-}
-
-
-.about__box{
-    width: 100%;
-    height: 50%;
-}
-
-.about__subtitle{
-    height: 2rem; 
-}
-
-.about__description{
-    border-left: .5rem solid var(--cor-sexta);
-    padding: .1rem 0 0 .5rem;
-    width: 60%;
-    font-size: 1.2rem;
-    text-indent: 1.5em; 
-    transition: all 0.2s;
-    background: rgba(255,255,255,.05);
-    box-shadow: 0 0 10px rgba(0,0,0,0.25);
-    backdrop-filter: blur(10px);
-    border-radius: 8px;
-    position: relative;
-}
-
-.about__circulo {
-    width: 100px;
-    height: 100px;
-    background: radial-gradient(#fff, #6fffe9);
-    border-radius: 50%;
-    position: absolute;
-    animation: move-up 3s ease-in infinite alternate-reverse;
-    z-index: -10;
-    opacity: .3;
-  }
-  
-  .about__circulo:nth-child(1) {
-    top: -25px;
-    left: -25px;
-  }
-  
-  .about__circulo:nth-child(2) {
-    bottom: -25px;
-    right: -25px;
-    animation-name: move-down;
-  }
-  .about__box{
-    width: 80%; 
-} 
-
-
-.about__description{
-    width: 50%;
-}
-
-
-#skill{
-    width: 100%;
-    height: 100vh;
-    background-color: var(--cor-segunda);
-}
-#project{
-    width: 100%;
-    height: 100vh;
-    background-color: var(--cor-terceira) 
-}
-.footer{
-    width: 100%;
-    height: 4rem;
-    background-color: var(--cor-primeira); 
-}
-
-
-
-@media screen and (max-width: 1400px){
-    .home__box__description{
-        border-left: .5rem solid var(--cor-sexta); 
-        width: auto;
-    }
-    .home__col__photo, .home__col__description{
-       width: 50%;
-        height: 100%; 
-    } 
-
-    .home__box__photo{
-        width: 100%;
-    }
-
-    .home__imagem__box{
-        width: 100%;
-        height: 100%; 
-    }
-     
-    .home__imagem__box{
-        height: 90%;   
-    } 
-
-    .home__imagem__portiflio {
-        width: 30rem;
-        height: 30rem; 
-    }
-    .about__box{
-        width: 90%; 
-    } 
-
-
-    .about__description{
-        width: 60%;
-    }
-}
-
-@media screen and (max-width: 1200px){
-    .home__box__description{
-        border-left: .5rem solid var(--cor-sexta); 
-        width: auto;
-    }
-    .home__col__photo, .home__col__description{
-       width: 50%;
-        height: 100%; 
-    } 
-
-    .home__box__photo{
-        width: 100%;
-    }
-
-    .home__imagem__box{
-        width: 100%;
-        height: 100%; 
-    }
-     
-    .home__imagem__box{
-        height: 90%;   
-    } 
-
-    .home__imagem__portiflio {
-        width: 30rem;
-        height: 30rem; 
-    }
-
-    .about__box{
-        width: 90%; 
-    } 
-
-
-    .about__description{
-        width: 70%;
-    }
-}
-
-@media screen and (max-width: 992px){
-    .home__box__description{
-        border-left: .5rem solid var(--cor-sexta); 
-        width: auto;
-    }
-    .home__col__photo, .home__col__description{
-       width: 100%;
-        height: 50%; 
-    } 
-
-    .home__box__photo{
-        width: 100%;
-    }
-
-    .home__imagem__box{
-        width: 100%;
-        height: 100%; 
-    }
-     
-    .home__imagem__box{
-        height: 90%;   
-    } 
-
-    .home__imagem__portiflio {
-        width: 25rem;
-        height: 25rem; 
-    }
-    .about__box{
-        width: 100%; 
-    } 
-
-
-    .about__description{
-        width: 78%;
-    }
-}
-
-@media screen and (max-width: 768px){
-    .home__box__description{
-        border-left: .5rem solid var(--cor-sexta); 
-        width: auto;
-    }
-    .home__col__photo, .home__col__description{
-       width: 100%;
-        height: 50%; 
-    } 
-
-    .home__box__photo{
-        width: 100%;
-    }
-
-    .home__imagem__box{
-        width: 100%;
-        height: 100%; 
-    }
-     
-    .home__imagem__box{
-        height: 90%;   
-    } 
-
-    .home__imagem__portiflio {
-        width: 12rem;
-        height: 12rem; 
-    }
-    .about__box{
-        width: 100%; 
-    } 
-
-
-    .about__description{
-        width: 98%;
-    }
-}
-*/
-
-
-
 @keyframes move-up {
     to {
       transform: translateY(-56px);
@@ -949,3 +732,21 @@
       transform: translateY(36px);
     }
   }
+
+  @keyframes blink{
+    0%{
+        background-color: #111010;
+    }
+    49%{
+        background-color: #111010;
+    }
+    50%{
+        background-color: transparent;
+    }
+    99%{
+        background-color: transparent;
+    }
+    100%{
+        background-color: #111010;
+    }
+}
