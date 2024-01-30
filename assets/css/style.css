@@ -105,6 +105,7 @@
 
 .home__destaque{
     font-size: 2.5rem;
+    color: var(--cor-quinta);
 }
 
 .home__botoes{  
@@ -143,9 +144,40 @@
     align-items: center;
 }
 
-.size__photo{
+.loader {
     width: 50%;
-    height: 40%;
+    height: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: move-up-photo 3s ease-in infinite alternate-reverse;
+  }
+  
+  .loader_cube {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+  }
+  
+  .loader_cube--glowing {
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .loader_cube--color {
+    z-index: 1;
+    filter: blur(2px);
+    background: linear-gradient(135deg, #1afbf0, #da00ff);
+    transform: rotate(-130deg);
+  } 
+ 
+.size__photo{
+    width: 90%;
+    height: 90%;
+    z-index: 2;
 }
 
 /* SEÇÃO SOBRE-MIM*/
@@ -422,7 +454,15 @@
 
 
 @media screen and (max-width: 1400px){
-    
+    .loader {
+        width: 70%;
+        height: 50%;
+         
+      }
+    .size__photo{
+        width: 90%;
+        height: 90%;
+    }
     /* SEÇÃO SOBRE-MIM*/
 
     .about__description{ 
@@ -450,9 +490,15 @@
     .home__destaque{
         font-size: 2rem;
     }
+
+    .loader {
+        width: 70%;
+        height: 50%;
+         
+      }
     .size__photo{
-        width: 60%;
-        height: 40%;
+        width: 90%;
+        height: 90%;
     }
 
     /* SEÇÃO SOBRE-MIM*/
@@ -486,6 +532,16 @@
     
     .home__destaque__nome{
         font-size: 2.5rem;
+    }
+
+    .loader {
+        width: 85%;
+        height: 50%;
+         
+      }
+    .size__photo{
+        width: 90%;
+        height: 90%;
     }
 
    /* SEÇÃO SOBRE-MIM*/
@@ -543,9 +599,14 @@
          
     }
 
+    .loader {
+        width: 40%;
+        height: 60%;
+         
+      }
     .size__photo{
-        width: 35%;
-        height: 50%;
+        width: 90%;
+        height: 90%;
     }
 
      /* SEÇÃO SOBRE-MIM*/
@@ -610,9 +671,14 @@
         font-size: 1.8rem;
     }
 
+    .loader {
+        width: 60%;
+        height: 60%;
+         
+      }
     .size__photo{
-        width: 40%;
-        height: 50%;
+        width: 90%;
+        height: 90%;
     }
 
     /* SEÇÃO SOBRE-MIM*/
@@ -875,5 +941,11 @@
   @keyframes move-down {
     to {
       transform: translateY(56px);
+    }
+  }
+
+  @keyframes move-up-photo {
+    50% {
+      transform: translateY(36px);
     }
   }
