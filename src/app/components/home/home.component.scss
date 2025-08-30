@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   padding: var(--spacing-20) 0;
-  background: linear-gradient(135deg, var(--background-color) 0%, var(--surface-color) 50%, var(--background-color) 100%);
+  background: var(--background-color);
   position: relative;
   overflow: hidden;
 
@@ -120,40 +120,6 @@
         &.typing {
           animation: none;
           opacity: 1;
-        }
-      }
-    }
-
-    .hero-description {
-      font-size: var(--font-size-lg);
-      line-height: 1.7;
-      color: var(--text-secondary);
-      margin-bottom: var(--spacing-8);
-      max-width: 500px;
-    }
-
-    .hero-stats {
-      display: flex;
-      gap: var(--spacing-8);
-      margin-bottom: var(--spacing-10);
-
-      .stat-item {
-        text-align: center;
-
-        .stat-number {
-          display: block;
-          font-size: var(--font-size-2xl);
-          font-weight: 700;
-          color: var(--primary-color);
-          line-height: 1;
-        }
-
-        .stat-label {
-          font-size: var(--font-size-sm);
-          color: var(--text-muted);
-          font-weight: 500;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
         }
       }
     }
@@ -314,39 +280,185 @@
         position: absolute;
         inset: 0;
 
-        .floating-icon {
+        .floating-tech-icon {
           position: absolute;
-          width: 80px;
-          height: 80px;
+          width: 50px;
+          height: 50px;
           background: var(--surface-elevated);
           border: 1px solid var(--border-color);
-          border-radius: 20px;
+          border-radius: 16px;
           display: flex;
           align-items: center;
           justify-content: center;
-          box-shadow: 0 8px 30px var(--shadow-color);
+          box-shadow: 0 6px 20px var(--shadow-color);
           animation: float 6s ease-in-out infinite;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
           svg {
-            color: var(--primary-color);
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s ease;
           }
 
-          &.tech-icon {
-            top: 20%;
-            right: 10%;
-            animation-delay: 0s;
+          &:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 30px var(--shadow-color);
           }
 
-          &.design-icon {
-            top: 60%;
-            left: 5%;
-            animation-delay: 2s;
-          }
-
-          &.code-icon {
-            bottom: 20%;
+          // Java - Top Right
+          &.java-icon {
+            top: 10%;
             right: 15%;
-            animation-delay: 4s;
+            animation-delay: 0s;
+            
+            svg {
+              color: #f89820;
+            }
+            
+            &:hover {
+              background: #f89820;
+              
+              svg {
+                color: white;
+              }
+            }
+          }
+
+          // JavaScript - Right
+          &.javascript-icon {
+            top: 35%;
+            right: 5%;
+            animation-delay: 0.5s;
+            
+            svg {
+              color: #f7df1e;
+            }
+            
+            &:hover {
+              background: #f7df1e;
+              
+              svg {
+                color: black;
+              }
+            }
+          }
+
+          // TypeScript - Bottom Right
+          &.typescript-icon {
+            bottom: 15%;
+            right: 10%;
+            animation-delay: 1s;
+            
+            svg {
+              color: #3178c6;
+            }
+            
+            &:hover {
+              background: #3178c6;
+              
+              svg {
+                color: white;
+              }
+            }
+          }
+
+          // Angular - Bottom
+          &.angular-icon {
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            animation-delay: 1.5s;
+            
+            svg {
+              color: #dd1b16;
+            }
+            
+            &:hover {
+              background: #dd1b16;
+              transform: translateX(-50%) translateY(-5px) scale(1.1);
+              
+              svg {
+                color: white;
+              }
+            }
+          }
+
+          // CSS3 - Bottom Left
+          &.css-icon {
+            bottom: 15%;
+            left: 10%;
+            animation-delay: 2s;
+            
+            svg {
+              color: #1572b6;
+            }
+            
+            &:hover {
+              background: #1572b6;
+              
+              svg {
+                color: white;
+              }
+            }
+          }
+
+          // C# - Left
+          &.csharp-icon {
+            top: 35%;
+            left: 5%;
+            animation-delay: 2.5s;
+            
+            svg {
+              color: #239120;
+            }
+            
+            &:hover {
+              background: #239120;
+              
+              svg {
+                color: white;
+              }
+            }
+          }
+
+          // SQL - Top Left
+          &.sql-icon {
+            top: 10%;
+            left: 15%;
+            animation-delay: 3s;
+            
+            svg {
+              color: #336791;
+            }
+            
+            &:hover {
+              background: #336791;
+              
+              svg {
+                color: white;
+              }
+            }
+          }
+
+          // Git - Top
+          &.git-icon {
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            animation-delay: 3.5s;
+            
+            svg {
+              color: #f05032;
+            }
+            
+            &:hover {
+              background: #f05032;
+              transform: translateX(-50%) translateY(-5px) scale(1.1);
+              
+              svg {
+                color: white;
+              }
+            }
           }
         }
       }
@@ -434,30 +546,6 @@
     }
   }
 
-  .scroll-indicator {
-    position: absolute;
-    bottom: var(--spacing-8);
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    z-index: 1;
-
-    .scroll-text {
-      font-size: var(--font-size-sm);
-      color: var(--text-muted);
-      margin-bottom: var(--spacing-2);
-      font-weight: 500;
-    }
-
-    .scroll-arrow {
-      animation: bounce 2s infinite;
-
-      svg {
-        color: var(--primary-color);
-      }
-    }
-  }
-
   // Responsive Design
   @media (max-width: 1024px) {
     .hero-content {
@@ -488,11 +576,6 @@
     .hero-text {
       order: 2;
 
-      .hero-stats {
-        justify-content: center;
-        gap: var(--spacing-6);
-      }
-
       .hero-actions {
         justify-content: center;
         flex-wrap: wrap;
@@ -516,13 +599,13 @@
           margin: 40px auto;
         }
 
-        .floating-elements .floating-icon {
-          width: 60px;
-          height: 60px;
+        .floating-elements .floating-tech-icon {
+          width: 40px;
+          height: 40px;
 
           svg {
-            width: 30px;
-            height: 30px;
+            width: 20px;
+            height: 20px;
           }
         }
       }
@@ -542,17 +625,6 @@
         .typing-prefix,
         .typing-text {
           font-size: var(--font-size-lg);
-        }
-      }
-
-      .hero-stats {
-        flex-direction: column;
-        gap: var(--spacing-4);
-
-        .stat-item {
-          .stat-number {
-            font-size: var(--font-size-xl);
-          }
         }
       }
 
