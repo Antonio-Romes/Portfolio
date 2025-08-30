@@ -1,45 +1,178 @@
-<section id="about" class="about section">
+<section id="about" class="about-section">
   <div class="container">
-    <h2 class="section-title">Sobre Mim</h2>
-    
+    <!-- Section Header -->
+    <div class="section-header" data-aos="fade-up" data-aos-duration="1000">
+      <span class="section-subtitle">Conheça mais sobre mim</span>
+      <h2 class="section-title">Sobre Antonio Romes</h2>
+      <p class="section-description">
+        Desenvolvedor apaixonado por criar experiências digitais excepcionais
+      </p>
+    </div>
+
     <div class="about-content">
-      <div class="about-text">
-        <div class="about-description">
-          <p class="intro">Desenvolvedor Web júnior apaixonado por tecnologia.</p>
-          
-          <p>
-            Olá, eu sou <strong>Antonio Romes</strong>, um desenvolvedor web júnior, 
-            apaixonado por tecnologia e gosto de desafios. Com 3 anos de experiência 
-            entre estágio, trainee e júnior em desenvolvimento web, tenho trabalhado 
-            com diversas tecnologias e plataformas para criar soluções que atendam 
-            às necessidades dos clientes.
-          </p>
-          
-          <p>
-            Eu amo o desafio de encontrar soluções inovadoras e criativas para 
-            problemas complexos e estou sempre buscando aprender e crescer como 
-            profissional e pessoal.
-          </p>
-        </div>
-        
-        <button class="btn btn-primary" (click)="downloadCV()">
-          Baixar CV
-        </button>
-      </div>
-      
-      <div class="skills-grid">
-        <h3>Principais Habilidades</h3>
-        <div class="skills-list">
-          <div class="skill-item" *ngFor="let skill of skills">
-            <div class="skill-info">
-              <img [src]="skill.icon" [alt]="skill.name + ' icon'" class="skill-icon">
-              <span class="skill-name">{{ skill.name }}</span>
+      <!-- Main About Content -->
+      <div class="about-main" data-aos="fade-right" data-aos-delay="200">
+        <div class="about-text">
+          <div class="intro-card">
+            <div class="intro-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
             </div>
-            <div class="skill-level">
-              <div class="skill-bar">
-                <div class="skill-progress" [style.width.%]="skill.level"></div>
+            <div class="intro-content">
+              <h3>Desenvolvedor Full Stack</h3>
+              <p>3+ anos de experiência criando soluções web modernas</p>
+            </div>
+          </div>
+
+          <div class="description-content">
+            <p class="highlight-text">
+              Olá! Eu sou <span class="name-highlight">Antonio Romes</span>, 
+              um desenvolvedor web júnior apaixonado por transformar ideias 
+              em realidade digital.
+            </p>
+            
+            <p>
+              Com mais de 3 anos de experiência em desenvolvimento web, 
+              trabalhei com diversas tecnologias e frameworks modernos. 
+              Minha jornada inclui experiências como estagiário, trainee 
+              e desenvolvedor júnior, sempre focado em entregar soluções 
+              de alta qualidade.
+            </p>
+            
+            <p>
+              Sou especializado em Angular, C# .NET e tecnologias frontend, 
+              mas estou sempre explorando novas ferramentas e metodologias 
+              para me manter atualizado com as tendências do mercado.
+            </p>
+
+            <div class="values-grid">
+              <div class="value-item">
+                <div class="value-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                  </svg>
+                </div>
+                <div class="value-content">
+                  <h4>Inovação</h4>
+                  <p>Busco sempre soluções criativas e eficientes</p>
+                </div>
               </div>
-              <span class="skill-percentage">{{ skill.level }}%</span>
+              
+              <div class="value-item">
+                <div class="value-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                </div>
+                <div class="value-content">
+                  <h4>Qualidade</h4>
+                  <p>Código limpo e bem estruturado é prioridade</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-section">
+          <div class="cta-buttons">
+            <button class="btn btn-primary" (click)="downloadCV()">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14,2 14,8 20,8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10,9 9,9 8,9"/>
+              </svg>
+              <span>Download CV</span>
+            </button>
+            
+            <button class="btn btn-outline" (click)="scrollToSection('projects')">
+              <span>Ver Projetos</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m6 9 6 6 6-6"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills and Experience Sidebar -->
+      <div class="about-sidebar" data-aos="fade-left" data-aos-delay="400">
+        <!-- Experience Timeline -->
+        <div class="experience-section">
+          <h3 class="sidebar-title">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            Experiência
+          </h3>
+          
+          <div class="timeline">
+            <div class="timeline-item" *ngFor="let exp of experience; let i = index" 
+                 data-aos="fade-up" [attr.data-aos-delay]="600 + (i * 100)">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">{{ exp.year }}</span>
+                <h4 class="timeline-title">{{ exp.title }}</h4>
+                <p class="timeline-company">{{ exp.company }}</p>
+                <p class="timeline-description">{{ exp.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Top Skills -->
+        <div class="skills-section">
+          <h3 class="sidebar-title">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+              <polyline points="2 17 12 22 22 17"/>
+              <polyline points="2 12 12 17 22 12"/>
+            </svg>
+            Principais Skills
+          </h3>
+          
+          <div class="skills-list">
+            <div class="skill-item" *ngFor="let skill of topSkills; let i = index"
+                 data-aos="fade-left" [attr.data-aos-delay]="800 + (i * 100)">
+              <div class="skill-header">
+                <div class="skill-info">
+                  <img [src]="skill.icon" [alt]="skill.name + ' icon'" class="skill-icon">
+                  <span class="skill-name">{{ skill.name }}</span>
+                </div>
+                <span class="skill-level">{{ skill.level }}%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" 
+                     [style.width.%]="skill.level"
+                     [style.animation-delay.ms]="i * 200">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="stats-section">
+          <h3 class="sidebar-title">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="20" x2="18" y2="10"/>
+              <line x1="12" y1="20" x2="12" y2="4"/>
+              <line x1="6" y1="20" x2="6" y2="14"/>
+            </svg>
+            Estatísticas
+          </h3>
+          
+          <div class="stats-grid">
+            <div class="stat-card" *ngFor="let stat of stats; let i = index"
+                 data-aos="zoom-in" [attr.data-aos-delay]="1000 + (i * 150)">
+              <div class="stat-number">{{ stat.number }}</div>
+              <div class="stat-label">{{ stat.label }}</div>
             </div>
           </div>
         </div>

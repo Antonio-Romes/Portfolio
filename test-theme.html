@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theme Test</title>
+  <style>
+    /* Copy the CSS variables from our styles.scss */
+    :root {
+      --primary-color: #6366f1;
+      --secondary-color: #10b981;
+      --accent-color: #f59e0b;
+      --background-color: #ffffff;
+      --surface-color: #f8fafc;
+      --surface-elevated: #ffffff;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #94a3b8;
+      --border-color: #e2e8f0;
+      --border-light: #f1f5f9;
+      --shadow-color: rgba(0, 0, 0, 0.08);
+    }
+
+    :root[data-theme="dark"] {
+      --primary-color: #818cf8;
+      --secondary-color: #34d399;
+      --accent-color: #fbbf24;
+      --background-color: #0f172a;
+      --surface-color: #1e293b;
+      --surface-elevated: #334155;
+      --text-primary: #f1f5f9;
+      --text-secondary: #cbd5e1;
+      --text-muted: #64748b;
+      --border-color: #334155;
+      --border-light: #475569;
+      --shadow-color: rgba(0, 0, 0, 0.25);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                  border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                  color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                  box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-primary);
+      padding: 2rem;
+    }
+
+    .theme-toggle {
+      background: var(--surface-elevated);
+      border: 2px solid var(--border-color);
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 8px var(--shadow-color);
+      margin-bottom: 2rem;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--primary-color);
+      transform: scale(1.1) rotate(15deg);
+    }
+
+    .test-card {
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    .primary-text { color: var(--primary-color); }
+    .secondary-text { color: var(--secondary-color); }
+    .accent-text { color: var(--accent-color); }
+  </style>
+</head>
+<body>
+  <h1>Theme Test Page</h1>
+  
+  <button class="theme-toggle" onclick="toggleTheme()">
+    <span id="theme-icon">🌙</span>
+  </button>
+  
+  <div class="test-card">
+    <h2 class="primary-text">Primary Color</h2>
+    <p class="secondary-text">Secondary Color</p>
+    <p class="accent-text">Accent Color</p>
+    <p>Regular text with variable colors</p>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const currentTheme = root.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      root.setAttribute('data-theme', newTheme);
+      document.getElementById('theme-icon').textContent = newTheme === 'dark' ? '☀️' : '🌙';
+      
+      console.log('Theme changed to:', newTheme);
+    }
+  </script>
+</body>
+</html>

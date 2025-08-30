@@ -1,4 +1,5 @@
-import { Injectable, signal, effect } from '@angular/core';
+import { Injectable, signal, effect, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 export type Theme = 'light' | 'dark';
 
@@ -7,13 +8,21 @@ export type Theme = 'light' | 'dark';
 })
 export class ThemeService {
   private currentTheme = signal<Theme>('light');
+  private isBrowser: boolean;
 
-  constructor() {
-    // Effect to update DOM when theme changes
-    // effect(() => {
-    //   document.documentElement.setAttribute('data-theme', this.currentTheme());
-    //   localStorage.setItem('theme', this.currentTheme());
-    // });
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+    
+    // Initialize theme from localStorage or system preference
+    this.initializeTheme();
+
+    // Effect to update DOM when theme changes (only in browser)
+    effect(() => {
+      if (this.isBrowser) {
+        document.documentElement.setAttribute('data-theme', this.currentTheme());
+        this.saveToStorage(this.currentTheme());
+      }
+    });
   }
 
   getCurrentTheme() {
@@ -30,13 +39,55 @@ export class ThemeService {
   }
 
   private initializeTheme(): void {
-    const savedTheme = localStorage.getItem('theme') as Theme;
+    if (!this.isBrowser) {
+      // Default to light theme on server
+      this.currentTheme.set('light');
+      return;
+    }
+
+    const savedTheme = this.loadFromStorage();
 
     if (savedTheme && (savedTheme === 'light' || savedTheme === 'dark')) {
       this.currentTheme.set(savedTheme);
     } else {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const prefersDark = this.getSystemPreference();
       this.currentTheme.set(prefersDark ? 'dark' : 'light');
+    }
+  }
+
+  private saveToStorage(theme: Theme): void {
+    if (this.isBrowser) {
+      try {
+        localStorage.setItem('theme', theme);
+      } catch (error) {
+        console.warn('Failed to save theme to localStorage:', error);
+      }
+    }
+  }
+
+  private loadFromStorage(): Theme | null {
+    if (!this.isBrowser) {
+      return null;
+    }
+
+    try {
+      return localStorage.getItem('theme') as Theme;
+    } catch (error) {
+      console.warn('Failed to load theme from localStorage:', error);
+      return null;
+    }
+  }
+
+  private getSystemPreference(): boolean {
+    if (!this.isBrowser) {
+      return false; // Default to light theme on server
+    }
+
+    try {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    } catch (error) {
+      console.warn('Failed to detect system color scheme preference:', error);
+      return false;
     }
   }
 
