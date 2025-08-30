@@ -1,29 +1,59 @@
-# Portifólio. 📌
+# PortfolioTemp
 
-![Imagem do portfifólio](/assets/img/Portfólio-Antonio.PNG "This is a sample image.")
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.6.
 
-## Olá! eu sou **Antonio Romes**!
+## Development server
 
-Criei este portfólio com o objetivo de fornece algumas informações para quem não me conhece.
+To start a local development server, run:
 
-Ao acessar meu **"portfólio [Link](https://antonio-romes.github.io/Portfolio/)"**, de inicia você pode ver uma foto minha, meu nome, profissão, um botão para sabe um pouco sobre mim, um outro botão para baixar meu currículo e minhas redes sociais.
+```bash
+ng serve
+```
 
-Na seção sobre mim, faço um breve resumo.
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-Na seção de habilidades, listo as tecnologias têm conhecimento.
+## Code scaffolding
 
-Na seção de projetos, apresento alguns projetos que foram desenvolvidos utilizando algumas tecnologias listadas. Os projetos têm como finalidade, de mostra minhas habilidades em construir projetos e ter uma forma apresenta habilidade que tem em determinadas tecnologias.
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-E por fim, no rodapé, se a pessoal gostou do que viu, tem a possibilidade de entrar em contato.
+```bash
+ng generate component component-name
+```
 
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
+```bash
+ng generate --help
+```
 
-Na construção do projeto foi utilizado as tecnologias, **HTML5, CSS3, Javascript e o site é responsável**.
+## Building
 
-### Tecnologias utilizadas 💻
-<div align="center">
-	<code><img width="40" src="https://user-images.githubusercontent.com/25181517/192158954-f88b5814-d510-4564-b285-dff7d6400dad.png" alt="HTML" title="HTML"/></code>
-	<code><img width="40" src="https://user-images.githubusercontent.com/25181517/183898674-75a4a1b1-f960-4ea9-abcb-637170a00a75.png" alt="CSS" title="CSS"/></code>
-	<code><img width="40" src="https://user-images.githubusercontent.com/25181517/183898054-b3d693d4-dafb-4808-a509-bab54cf5de34.png" alt="Bootstrap" title="Bootstrap"/></code>
-	<code><img width="40" src="https://user-images.githubusercontent.com/25181517/117447155-6a868a00-af3d-11eb-9cfe-245df15c9f3f.png" alt="JavaScript" title="JavaScript"/></code>
-</div>
+To build the project run:
+
+```bash
+ng build
+```
+
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+
+## Running unit tests
+
+To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+
+```bash
+ng test
+```
+
+## Running end-to-end tests
+
+For end-to-end (e2e) testing, run:
+
+```bash
+ng e2e
+```
+
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## Additional Resources
+
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

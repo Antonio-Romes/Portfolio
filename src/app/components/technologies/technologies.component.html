@@ -1,0 +1,61 @@
+<section id="technologies" class="technologies section">
+  <div class="container">
+    <h2 class="section-title">Tecnologias</h2>
+    
+    <div class="technologies-content">
+      
+      <div class="tech-category">
+        <h3 class="category-title">Frontend</h3>
+        <div class="tech-grid">
+          <div class="tech-item" *ngFor="let tech of frontendTechs">
+            <div class="tech-icon">
+              <img [src]="tech.icon" [alt]="tech.name + ' icon'">
+            </div>
+            <h4 class="tech-name">{{ tech.name }}</h4>
+            <p class="tech-description">{{ tech.description }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-category">
+        <h3 class="category-title">Backend</h3>
+        <div class="tech-grid">
+          <div class="tech-item" *ngFor="let tech of backendTechs">
+            <div class="tech-icon">
+              <img [src]="tech.icon" [alt]="tech.name + ' icon'">
+            </div>
+            <h4 class="tech-name">{{ tech.name }}</h4>
+            <p class="tech-description">{{ tech.description }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-category">
+        <h3 class="category-title">Database</h3>
+        <div class="tech-grid">
+          <div class="tech-item" *ngFor="let tech of databaseTechs">
+            <div class="tech-icon">
+              <img [src]="tech.icon" [alt]="tech.name + ' icon'">
+            </div>
+            <h4 class="tech-name">{{ tech.name }}</h4>
+            <p class="tech-description">{{ tech.description }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-category">
+        <h3 class="category-title">Ferramentas</h3>
+        <div class="tech-grid">
+          <div class="tech-item" *ngFor="let tech of toolsTechs">
+            <div class="tech-icon">
+              <img [src]="tech.icon" [alt]="tech.name + ' icon'">
+            </div>
+            <h4 class="tech-name">{{ tech.name }}</h4>
+            <p class="tech-description">{{ tech.description }}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

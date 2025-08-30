@@ -1,0 +1,49 @@
+<section id="about" class="about section">
+  <div class="container">
+    <h2 class="section-title">Sobre Mim</h2>
+    
+    <div class="about-content">
+      <div class="about-text">
+        <div class="about-description">
+          <p class="intro">Desenvolvedor Web júnior apaixonado por tecnologia.</p>
+          
+          <p>
+            Olá, eu sou <strong>Antonio Romes</strong>, um desenvolvedor web júnior, 
+            apaixonado por tecnologia e gosto de desafios. Com 3 anos de experiência 
+            entre estágio, trainee e júnior em desenvolvimento web, tenho trabalhado 
+            com diversas tecnologias e plataformas para criar soluções que atendam 
+            às necessidades dos clientes.
+          </p>
+          
+          <p>
+            Eu amo o desafio de encontrar soluções inovadoras e criativas para 
+            problemas complexos e estou sempre buscando aprender e crescer como 
+            profissional e pessoal.
+          </p>
+        </div>
+        
+        <button class="btn btn-primary" (click)="downloadCV()">
+          Baixar CV
+        </button>
+      </div>
+      
+      <div class="skills-grid">
+        <h3>Principais Habilidades</h3>
+        <div class="skills-list">
+          <div class="skill-item" *ngFor="let skill of skills">
+            <div class="skill-info">
+              <img [src]="skill.icon" [alt]="skill.name + ' icon'" class="skill-icon">
+              <span class="skill-name">{{ skill.name }}</span>
+            </div>
+            <div class="skill-level">
+              <div class="skill-bar">
+                <div class="skill-progress" [style.width.%]="skill.level"></div>
+              </div>
+              <span class="skill-percentage">{{ skill.level }}%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
