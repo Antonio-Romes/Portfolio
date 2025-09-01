@@ -1,30 +1,33 @@
-.about {
+.about-section {
   background: var(--surface-color);
-
-  .section-title {
-    text-align: center;
-    font-size: var(--font-size-3xl);
-    color: var(--text-primary);
-    margin-bottom: var(--spacing-12);
-    position: relative;
-
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background: var(--primary-color);
+  
+  .section-header {
+    .section-title {
+      // Main title: "Conheça mais sobre mim"
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: var(--spacing-3);
+    }
+    
+    .section-subtitle {
+      // Subtitle: "Sobre Antonio Romes"
+      font-size: var(--font-size-lg);
+      font-weight: 500;
+      color: var(--text-secondary);
+      display: block;
+      margin-bottom: var(--spacing-6);
     }
   }
 
   .about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-16);
-    align-items: start;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .about-main {
+    width: 100%;
   }
 
   .about-text {
@@ -50,114 +53,211 @@
       }
     }
 
-    .btn {
-      padding: var(--spacing-3) var(--spacing-6);
-      font-size: var(--font-size-base);
-      font-weight: 600;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-
-      &.btn-primary {
-        background: var(--primary-color);
-        color: white;
-
-        &:hover {
-          background: var(--secondary-color);
-          transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
-        }
-      }
-    }
-  }
-
-  .skills-grid {
-    h3 {
-      font-size: var(--font-size-xl);
-      color: var(--text-primary);
-      margin-bottom: var(--spacing-6);
-      text-align: center;
-    }
-
-    .skills-list {
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-4);
-    }
-
-    .skill-item {
-      background: var(--background-color);
-      padding: var(--spacing-4);
-      border-radius: 12px;
-      border: 1px solid var(--border-color);
-      transition: all 0.3s ease;
-
-      &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px var(--shadow-color);
-      }
-
-      .skill-info {
+    // Experience Timeline in main content
+    .experience-timeline {
+      margin-top: var(--spacing-8);
+      
+      .timeline-title {
         display: flex;
         align-items: center;
         gap: var(--spacing-3);
-        margin-bottom: var(--spacing-2);
-
-        .skill-icon {
-          width: 24px;
-          height: 24px;
-        }
-
-        .skill-name {
-          font-weight: 600;
-          color: var(--text-primary);
+        font-size: var(--font-size-xl);
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: var(--spacing-6);
+        
+        svg {
+          color: var(--primary-color);
         }
       }
-
-      .skill-level {
-        display: flex;
-        align-items: center;
-        gap: var(--spacing-3);
-
-        .skill-bar {
-          flex: 1;
-          height: 8px;
-          background: var(--border-color);
-          border-radius: 4px;
-          overflow: hidden;
-
-          .skill-progress {
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            border-radius: 4px;
-            transition: width 2s ease;
-            animation: fillBar 2s ease-in-out;
+      
+      .timeline {
+        position: relative;
+        padding-left: var(--spacing-6);
+        
+        &::before {
+          content: '';
+          position: absolute;
+          left: 12px;
+          top: 0;
+          bottom: 0;
+          width: 2px;
+          background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+        }
+        
+        .timeline-item {
+          position: relative;
+          margin-bottom: var(--spacing-8);
+          
+          &:last-child {
+            margin-bottom: 0;
+          }
+          
+          .timeline-dot {
+            position: absolute;
+            left: -18px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: var(--primary-color);
+            border: 3px solid var(--surface-color);
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px var(--primary-color);
+          }
+          
+          .timeline-content {
+            background: var(--background-color);
+            padding: var(--spacing-5);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            
+            &:hover {
+              transform: translateY(-2px);
+              box-shadow: 0 8px 25px var(--shadow-color);
+            }
+            
+            .timeline-year {
+              display: inline-block;
+              background: var(--primary-color);
+              color: white;
+              padding: var(--spacing-1) var(--spacing-3);
+              border-radius: 20px;
+              font-size: var(--font-size-sm);
+              font-weight: 600;
+              margin-bottom: var(--spacing-3);
+            }
+            
+            .timeline-title {
+              font-size: var(--font-size-lg);
+              font-weight: 600;
+              color: var(--text-primary);
+              margin-bottom: var(--spacing-2);
+            }
+            
+            .timeline-company {
+              font-size: var(--font-size-base);
+              font-weight: 500;
+              color: var(--primary-color);
+              margin-bottom: var(--spacing-3);
+            }
+            
+            .timeline-description {
+              font-size: var(--font-size-sm);
+              color: var(--text-secondary);
+              line-height: 1.6;
+              margin: 0;
+            }
           }
         }
+      }
+    }
 
-        .skill-percentage {
-          font-size: var(--font-size-sm);
-          font-weight: 600;
+    // Skills Section in main content
+    .skills-section {
+      margin-top: var(--spacing-12);
+      
+      .skills-title {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-3);
+        font-size: var(--font-size-xl);
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: var(--spacing-6);
+        
+        svg {
           color: var(--primary-color);
-          min-width: 35px;
+        }
+      }
+      
+      .skills-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: var(--spacing-5);
+        
+        @media (min-width: 768px) {
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: var(--spacing-6);
+        }
+        
+        @media (min-width: 1024px) {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .skill-item {
+          background: var(--background-color);
+          padding: var(--spacing-4);
+          border-radius: 12px;
+          border: 1px solid var(--border-color);
+          transition: all 0.3s ease;
+
+          &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--shadow-color);
+          }
+
+          .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-3);
+            
+            .skill-info {
+              display: flex;
+              align-items: center;
+              gap: var(--spacing-3);
+
+              .skill-icon {
+                width: 24px;
+                height: 24px;
+              }
+
+              .skill-name {
+                font-weight: 600;
+                color: var(--text-primary);
+              }
+            }
+            
+            .skill-level {
+              font-size: var(--font-size-sm);
+              font-weight: 600;
+              color: var(--primary-color);
+            }
+          }
+
+          .skill-bar {
+            height: 8px;
+            background: var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+
+            .skill-progress {
+              height: 100%;
+              background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+              border-radius: 4px;
+              transition: width 2s ease;
+              animation: fillBar 2s ease-in-out;
+            }
+          }
         }
       }
     }
   }
 
   @media (max-width: 768px) {
-    .about-content {
-      grid-template-columns: 1fr;
-      gap: var(--spacing-8);
+    .section-header {
+      .section-title {
+        font-size: var(--font-size-2xl);
+      }
     }
-
-    .section-title {
-      font-size: var(--font-size-2xl);
-    }
-
-    .skills-grid {
-      order: -1;
+    
+    .about-text {
+      .skills-section {
+        .skills-list {
+          grid-template-columns: 1fr;
+        }
+      }
     }
   }
 }
