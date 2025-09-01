@@ -11,7 +11,7 @@ interface ExtendedProject {
   liveUrl?: string;
   githubUrl: string;
   featured: boolean;
-  category: 'frontend' | 'fullstack' | 'mobile' | 'backend';
+  category: 'frontend' | 'api' | 'mobile' | 'backend';
   year: string;
   status: 'completed' | 'in-progress' | 'planning';
   difficulty: 1 | 2 | 3 | 4 | 5;
@@ -136,7 +136,7 @@ export class ProjectsComponent {
       imageUrl: 'assets/img/api-placeholder.png',
       githubUrl: 'https://github.com/Antonio-Romes/EcommerceAPI',
       featured: true,
-      category: 'fullstack',
+      category: 'api',
       year: '2024',
       status: 'in-progress',
       difficulty: 5,
@@ -219,7 +219,7 @@ export class ProjectsComponent {
     const categoryMap: { [key: string]: string } = {
       'all': 'Todos',
       'frontend': 'Frontend',
-      'fullstack': 'Full Stack',
+      'api': 'API',
       'mobile': 'Mobile',
       'backend': 'Backend'
     };

@@ -8,7 +8,7 @@ export interface Project {
   liveUrl?: string;
   githubUrl: string;
   featured: boolean;
-  category: 'frontend' | 'backend' | 'fullstack';
+  category: 'frontend' | 'backend' | 'api';
 }
 
 export interface Skill {
