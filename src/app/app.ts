@@ -4,7 +4,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ProjectsComponent } from './components/projects/projects.component';
-import { TechnologiesComponent } from './components/technologies/technologies.component';
+
 import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
@@ -15,7 +15,6 @@ import { FooterComponent } from './components/footer/footer.component';
     HomeComponent,
     AboutComponent,
     ProjectsComponent,
-    TechnologiesComponent,
     FooterComponent
   ],
   templateUrl: './app.html',
