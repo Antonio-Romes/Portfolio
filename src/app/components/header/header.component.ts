@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ScrollService } from '../../services/scroll.service';
 import { ThemeService } from '../../services/theme.service';
@@ -10,8 +10,14 @@ import { ThemeService } from '../../services/theme.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
   isMenuOpen = false;
+  
+  // Computed signal for active section
+  activeSection = computed(() => this.scrollService.getCurrentSection()());
+  
+  // Computed signal for current theme
+  currentTheme = computed(() => this.themeService.getCurrentTheme()());
   
   constructor(
     private scrollService: ScrollService,
@@ -19,15 +25,11 @@ export class HeaderComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // Listen for scroll changes to update active section
+    // Component initialization
   }
 
-  get activeSection() {
-    return this.scrollService.getCurrentSection()();
-  }
-
-  get currentTheme() {
-    return this.themeService.getCurrentTheme()();
+  ngOnDestroy() {
+    // Cleanup if needed
   }
 
   toggleMenu() {
@@ -35,8 +37,9 @@ export class HeaderComponent implements OnInit {
   }
 
   scrollToSection(sectionId: string) {
+    console.log('Header: Scrolling to section:', sectionId);
     this.scrollService.smoothScrollTo(sectionId);
-    this.isMenuOpen = false;
+    this.isMenuOpen = false; // Close mobile menu after navigation
   }
 
   toggleTheme() {

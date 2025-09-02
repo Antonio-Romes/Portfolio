@@ -59,6 +59,7 @@ export class FooterComponent {
   }
 
   scrollToSection(sectionId: string) {
+    console.log('Footer: Scrolling to section:', sectionId);
     this.scrollService.smoothScrollTo(sectionId);
   }
 

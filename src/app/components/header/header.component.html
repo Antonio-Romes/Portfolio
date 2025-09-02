@@ -11,17 +11,17 @@
     </button>
     
     <ul class="nav-menu" [class.active]="isMenuOpen">
-      <li><a href="#" (click)="scrollToSection('home')" [class.active]="activeSection === 'home'">Home</a></li>
-      <li><a href="#" (click)="scrollToSection('about')" [class.active]="activeSection === 'about'">Sobre</a></li>
-      <li><a href="#" (click)="scrollToSection('experience')" [class.active]="activeSection === 'experience'">Experiência</a></li>
-      <li><a href="#" (click)="scrollToSection('projects')" [class.active]="activeSection === 'projects'">Projetos</a></li>
+      <li><a href="#" (click)="scrollToSection('home'); $event.preventDefault()" [class.active]="activeSection() === 'home'">Home</a></li>
+      <li><a href="#" (click)="scrollToSection('about'); $event.preventDefault()" [class.active]="activeSection() === 'about'">Sobre</a></li>
+      <li><a href="#" (click)="scrollToSection('experience'); $event.preventDefault()" [class.active]="activeSection() === 'experience'">Experiência</a></li>
+      <li><a href="#" (click)="scrollToSection('projects'); $event.preventDefault()" [class.active]="activeSection() === 'projects'">Projetos</a></li>
     </ul>
     
     <button class="theme-toggle" 
             (click)="toggleTheme()" 
-            [attr.aria-label]="currentTheme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
+            [attr.aria-label]="currentTheme() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
             title="Toggle theme">
-      <span class="theme-icon">{{ currentTheme === 'dark' ? '☀️' : '🌙' }}</span>
+      <span class="theme-icon">{{ currentTheme() === 'dark' ? '☀️' : '🌙' }}</span>
     </button>
   </div>
 </nav>

@@ -99,10 +99,10 @@
           Navegação
         </h4>
         <ul class="links-list">
-          <li><a href="#" (click)="scrollToSection('home')" class="footer-link">Início</a></li>
-          <li><a href="#" (click)="scrollToSection('about')" class="footer-link">Sobre</a></li>
-          <li><a href="#" (click)="scrollToSection('experience')" class="footer-link">Experiência</a></li>
-          <li><a href="#" (click)="scrollToSection('projects')" class="footer-link">Projetos</a></li>
+          <li><a href="#" (click)="scrollToSection('home'); $event.preventDefault()" class="footer-link">Início</a></li>
+          <li><a href="#" (click)="scrollToSection('about'); $event.preventDefault()" class="footer-link">Sobre</a></li>
+          <li><a href="#" (click)="scrollToSection('experience'); $event.preventDefault()" class="footer-link">Experiência</a></li>
+          <li><a href="#" (click)="scrollToSection('projects'); $event.preventDefault()" class="footer-link">Projetos</a></li>
         </ul>
       </div>
     </div>

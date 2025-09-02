@@ -25,38 +25,33 @@ export class ScrollService {
   smoothScrollTo(elementId: string): void {
     if (!this.isBrowser) return;
     
+    console.log(`Scrolling to section: ${elementId}`);
+    
     const element = document.getElementById(elementId);
     if (element) {
-      const headerHeight = 80; // Updated header height
+      const headerHeight = 80; // Fixed header height
       const elementPosition = element.offsetTop - headerHeight;
-      const currentPosition = window.scrollY;
-      const distance = Math.abs(elementPosition - currentPosition);
-      const duration = Math.min(Math.max(distance / 3, 300), 1000); // Dynamic duration
-
+      
+      console.log(`Element found. Position: ${elementPosition}`);
+      
       this.isScrolling = true;
       
-      // Use modern scroll API with better easing
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-        inline: 'nearest'
+      // Use direct window.scrollTo for more reliable behavior
+      window.scrollTo({
+        top: Math.max(0, elementPosition), // Ensure we don't scroll to negative position
+        behavior: 'smooth'
       });
 
-      // Manually adjust for header offset
-      setTimeout(() => {
-        window.scrollBy({
-          top: -headerHeight,
-          behavior: 'smooth'
-        });
-      }, 100);
-
-      // Update active section
+      // Update active section immediately
       this.currentSection.set(elementId);
       
-      // Reset scrolling flag
+      // Reset scrolling flag after animation completes
       setTimeout(() => {
         this.isScrolling = false;
-      }, duration);
+        console.log(`Scroll to ${elementId} completed`);
+      }, 1000);
+    } else {
+      console.warn(`Element with id '${elementId}' not found`);
     }
   }
 
