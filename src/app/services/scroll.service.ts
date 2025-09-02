@@ -104,7 +104,7 @@ export class ScrollService {
   private updateCurrentSection(): void {
     if (!this.isBrowser || this.isScrolling) return;
     
-    const sections = ['home', 'about', 'projects'];
+    const sections = ['home', 'about', 'experience', 'projects'];
     const scrollPosition = window.scrollY;
     const viewportHeight = window.innerHeight;
     const headerOffset = 100;

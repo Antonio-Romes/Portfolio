@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
+import { Experience as ExperienceComponent } from './components/experience/experience';
 import { ProjectsComponent } from './components/projects/projects.component';
 
 import { FooterComponent } from './components/footer/footer.component';
@@ -14,6 +15,7 @@ import { FooterComponent } from './components/footer/footer.component';
     HeaderComponent,
     HomeComponent,
     AboutComponent,
+    ExperienceComponent,
     ProjectsComponent,
     FooterComponent
   ],

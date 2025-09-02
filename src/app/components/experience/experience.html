@@ -1,0 +1,102 @@
+<section id="experience" class="experience-section">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section-header" data-aos="fade-up" data-aos-duration="1000">
+      <span class="section-subtitle">Minha Jornada</span>
+      <h2 class="section-title">Experiência Profissional</h2>
+      <p class="section-description">
+        Uma visão detalhada da minha trajetória profissional e evolução como desenvolvedor
+      </p>
+    </div>
+
+    <div class="experience-content">
+      <!-- Timeline Section -->
+      <div class="experience-timeline" data-aos="fade-up" data-aos-delay="200">
+        <div class="timeline-item" 
+             *ngFor="let exp of experiences; let i = index; trackBy: trackByExperience" 
+             data-aos="fade-up" 
+             [attr.data-aos-delay]="400 + (i * 200)">
+          <div class="timeline-marker">
+            <div class="timeline-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+            </div>
+            <div class="timeline-line" *ngIf="i < experiences.length - 1"></div>
+          </div>
+
+          <div class="timeline-content">
+            <div class="experience-card">
+              <div class="card-header">
+                <div class="experience-meta">
+                  <span class="experience-year">{{ exp.year }}</span>
+                  <span class="experience-duration">{{ exp.duration }}</span>
+                  <span class="experience-type" [class]="exp.type">{{ exp.type | titlecase }}</span>
+                </div>
+                <div class="experience-current" *ngIf="exp.current">
+                  <span class="current-badge">Atual</span>
+                </div>
+              </div>
+
+              <div class="card-body">
+                <h3 class="experience-title">{{ exp.title }}</h3>
+                <div class="company-info">
+                  <a *ngIf="exp.companyUrl && exp.companyUrl !== ''; else companyText"
+                     [href]="exp.companyUrl"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     class="company-link">
+                    {{ exp.company }}
+                  </a>
+                  <ng-template #companyText>
+                    <span class="company-name">{{ exp.company }}</span>
+                  </ng-template>
+                  <span class="location">{{ exp.location }}</span>
+                </div>
+
+                <p class="experience-description">{{ exp.description }}</p>
+
+                <div class="responsibilities" *ngIf="exp.responsibilities.length">
+                  <h4>Principais Responsabilidades:</h4>
+                  <ul>
+                    <li *ngFor="let responsibility of exp.responsibilities">{{ responsibility }}</li>
+                  </ul>
+                </div>
+
+                <div class="achievements" *ngIf="exp.achievements.length">
+                  <h4>Conquistas:</h4>
+                  <ul class="achievements-list">
+                    <li *ngFor="let achievement of exp.achievements" class="achievement-item">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20,6 9,17 4,12"/>
+                      </svg>
+                      {{ achievement }}
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="technologies" *ngIf="exp.technologies.length">
+                  <h4>Tecnologias Utilizadas:</h4>
+                  <div class="tech-stack">
+                    <span *ngFor="let tech of exp.technologies" 
+                          class="tech-tag" 
+                          [class]="tech.category"
+                          [title]="tech.name">
+                      <img [src]="tech.icon" 
+                           [alt]="tech.name + ' icon'" 
+                           class="tech-icon"
+                           (error)="$event.target.style.display='none'" />
+                      {{ tech.name }}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
