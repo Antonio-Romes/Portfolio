@@ -30,6 +30,7 @@
 
   .hero-content {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -316,7 +317,7 @@
       }
 
       // LEFT SIDE ICONS (4 icons)
-      
+
       // SQL - Top Left
       &.sql-icon {
         top: 15%;
@@ -394,7 +395,7 @@
       }
 
       // RIGHT SIDE ICONS (4 icons)
-      
+
       // Java - Top Right
       &.java-icon {
         top: 15%;
