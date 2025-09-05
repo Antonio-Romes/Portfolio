@@ -12,64 +12,79 @@
         <div class="about-text">
           <div class="intro-card">
             <div class="intro-icon">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                <circle cx="12" cy="7" r="4"/>
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
               </svg>
             </div>
             <div class="intro-content">
-              <h3>Desenvolvedor Full Stack</h3>
-              <p>3+ anos de experiência criando soluções web modernas</p>
+              <h3>Desenvolvedor Full Stack Junior</h3>
             </div>
           </div>
 
           <div class="description-content">
             <p class="highlight-text">
-              Olá! Eu sou <span class="name-highlight">Antonio Romes</span>, 
-              um desenvolvedor web júnior apaixonado por transformar ideias 
-              em realidade digital.
+              Olá! Eu sou <span class="name-highlight">Antonio Romes</span>, um desenvolvedor web
+              júnior apaixonado por transformar ideias em realidade digital.
             </p>
-            
+
             <p>
-              Com mais de 3 anos de experiência em desenvolvimento web, 
-              trabalhei com diversas tecnologias e frameworks modernos. 
-              Minha jornada inclui experiências como estagiário, trainee 
-              e desenvolvedor júnior, sempre focado em entregar soluções 
-              de alta qualidade.
+              Com mais de 3 anos de experiência em desenvolvimento web, trabalhei com diversas
+              tecnologias e frameworks modernos. Minha jornada inclui experiências como estagiário,
+              trainee e desenvolvedor júnior, sempre focado em entregar soluções de alta qualidade.
             </p>
-            
+
             <p>
-              Sou especializado em Angular, C# .NET e tecnologias frontend, 
-              mas estou sempre explorando novas ferramentas e metodologias 
-              para me manter atualizado com as tendências do mercado.
+              Sou especializado em Angular, C# .NET e tecnologias frontend, mas estou sempre
+              explorando novas ferramentas e metodologias para me manter atualizado com as
+              tendências do mercado.
             </p>
 
             <!-- Skills Section -->
             <div class="skills-section">
               <h3 class="skills-title">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polygon points="12 2 2 7 12 12 22 7 12 2"/>
-                  <polyline points="2 17 12 22 22 17"/>
-                  <polyline points="2 12 12 17 22 12"/>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                  <polyline points="2 17 12 22 22 17" />
+                  <polyline points="2 12 12 17 22 12" />
                 </svg>
                 Principais Skills
               </h3>
-              
+
               <div class="skills-list">
-                <div class="skill-item" *ngFor="let skill of topSkills; let i = index"
-                     data-aos="fade-up" [attr.data-aos-delay]="600 + (i * 100)">
+                <div
+                  class="skill-item"
+                  *ngFor="let skill of topSkills; let i = index"
+                  data-aos="fade-up"
+                  [attr.data-aos-delay]="600 + i * 100"
+                >
                   <div class="skill-header">
                     <div class="skill-info">
-                      <img [src]="skill.icon" [alt]="skill.name + ' icon'" class="skill-icon">
+                      <img [src]="skill.icon" [alt]="skill.name + ' icon'" class="skill-icon" />
                       <span class="skill-name">{{ skill.name }}</span>
                     </div>
                     <span class="skill-level">{{ skill.level }}%</span>
                   </div>
                   <div class="skill-bar">
-                    <div class="skill-progress" 
-                         [style.width.%]="skill.level"
-                         [style.animation-delay.ms]="i * 200">
-                    </div>
+                    <div
+                      class="skill-progress"
+                      [style.width.%]="skill.level"
+                      [style.animation-delay.ms]="i * 200"
+                    ></div>
                   </div>
                 </div>
               </div>
