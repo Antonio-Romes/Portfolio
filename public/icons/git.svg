@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 256 256">
+  <rect width="256" height="256" rx="60" fill="#f05032"/>
+  
+  <!-- Git Logo -->
+  <path d="M128 10L218.88 100.88c6.75 6.75 6.75 17.7 0 24.45L128 246l-90.88-120.67c-6.75-6.75-6.75-17.7 0-24.45L128 10z" fill="#fff"/>
+  
+  <!-- Git branches representation -->
+  <circle cx="80" cy="120" r="12" fill="#f05032"/>
+  <circle cx="128" cy="80" r="12" fill="#f05032"/>
+  <circle cx="176" cy="120" r="12" fill="#f05032"/>
+  <circle cx="128" cy="160" r="12" fill="#f05032"/>
+  
+  <!-- Connecting lines -->
+  <path d="M80 120 L128 80 L176 120 L128 160 Z" fill="none" stroke="#f05032" stroke-width="3"/>
+  <path d="M92 120 L116 80" stroke="#f05032" stroke-width="3"/>
+  <path d="M164 120 L140 80" stroke="#f05032" stroke-width="3"/>
+  <path d="M116 160 L140 120" stroke="#f05032" stroke-width="3"/>
+  <path d="M140 160 L164 120" stroke="#f05032" stroke-width="3"/>
+  
+  <!-- Git text -->
+  <text x="128" y="210" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="24" font-weight="bold">Git</text>
+</svg>

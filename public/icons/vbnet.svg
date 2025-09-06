@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="vbnetGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#68217a"/>
+      <stop offset="100%" stop-color="#9146ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="60" fill="url(#vbnetGradient)"/>
+  
+  <!-- VB letters design -->
+  <path d="M50 80 L90 80 Q110 80 110 95 Q110 110 90 110 L70 110 Q90 110 90 125 Q90 140 70 140 L50 140 Z" fill="#fff" stroke="#fff" stroke-width="2"/>
+  <path d="M50 90 L80 90 Q95 90 95 102.5 Q95 115 80 115 L50 115" fill="url(#vbnetGradient)"/>
+  
+  <path d="M130 80 L160 80 Q180 80 180 90 Q180 100 165 105 Q180 110 180 125 Q180 140 160 140 L130 140 Z" fill="#fff" stroke="#fff" stroke-width="2"/>
+  <path d="M130 90 L155 90 Q170 90 170 97.5 Q170 105 155 105 L130 105" fill="url(#vbnetGradient)"/>
+  <path d="M130 115 L155 115 Q170 115 170 127.5 Q170 140 155 140 L130 140" fill="url(#vbnetGradient)"/>
+  
+  <!-- .NET indicator with modern design -->
+  <rect x="60" y="160" width="136" height="24" rx="12" fill="#fff" opacity="0.9"/>
+  <circle cx="80" cy="172" r="4" fill="url(#vbnetGradient)"/>
+  <text x="95" y="177" fill="url(#vbnetGradient)" font-family="Arial, sans-serif" font-size="14" font-weight="bold">NET</text>
+  
+  <!-- Brand label -->
+  <text x="128" y="210" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="16" font-weight="bold">VB.NET</text>
+  <text x="128" y="230" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="10" opacity="0.8">Visual Basic</text>
+</svg>

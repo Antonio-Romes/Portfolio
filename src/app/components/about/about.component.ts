@@ -4,7 +4,6 @@ import { ScrollService } from '../../services/scroll.service';
 
 interface Skill {
   name: string;
-  level: number;
   icon: string;
 }
 
@@ -13,7 +12,7 @@ interface Skill {
   standalone: true,
   imports: [CommonModule],
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent {
   private isBrowser: boolean;
@@ -27,11 +26,13 @@ export class AboutComponent {
 
   // Top skills for skills section
   topSkills: Skill[] = [
-    { name: 'Angular', level: 95, icon: 'assets/icons/angular.svg' },
-    { name: 'TypeScript', level: 90, icon: 'assets/icons/typescript.svg' },
-    { name: 'C# .NET', level: 85, icon: 'assets/icons/csharp.svg' },
-    { name: 'JavaScript', level: 90, icon: 'assets/icons/javascript.svg' },
-    { name: 'SQL Server', level: 80, icon: 'assets/icons/sql.svg' },
-    { name: 'HTML/CSS', level: 95, icon: 'assets/icons/html.svg' }
+    { name: 'Angular', icon: 'icons/angular.svg' },
+    { name: 'TypeScript', icon: 'icons/typescript.svg' },
+    { name: 'C#', icon: 'icons/csharp-simple.svg' },
+    { name: 'ASP.NET Core', icon: 'icons/aspnet-core.svg' },
+    { name: 'JavaScript', icon: 'icons/javascript.svg' },
+    { name: 'Git', icon: 'icons/git.svg' },
+    { name: 'VB.NET', icon: 'icons/vbnet.svg' },
+    { name: 'SQL Server', icon: 'icons/sql.svg' },
   ];
 }

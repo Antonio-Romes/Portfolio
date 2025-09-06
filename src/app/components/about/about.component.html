@@ -66,7 +66,7 @@
             <p>📩 Será um prazer conversar!</p>
             <!-- Skills Section -->
             <div class="skills-section">
-              <h3 class="skills-title">
+              <h2 class="skills-title">
                 <svg
                   width="24"
                   height="24"
@@ -80,28 +80,18 @@
                   <polyline points="2 12 12 17 22 12" />
                 </svg>
                 Principais Skills
-              </h3>
+              </h2>
 
-              <div class="skills-list">
+              <div class="skills-grid">
                 <div
                   class="skill-item"
                   *ngFor="let skill of topSkills; let i = index"
                   data-aos="fade-up"
                   [attr.data-aos-delay]="600 + i * 100"
                 >
-                  <div class="skill-header">
-                    <div class="skill-info">
-                      <img [src]="skill.icon" [alt]="skill.name + ' icon'" class="skill-icon" />
-                      <span class="skill-name">{{ skill.name }}</span>
-                    </div>
-                    <span class="skill-level">{{ skill.level }}%</span>
-                  </div>
-                  <div class="skill-bar">
-                    <div
-                      class="skill-progress"
-                      [style.width.%]="skill.level"
-                      [style.animation-delay.ms]="i * 200"
-                    ></div>
+                  <div class="skill-content">
+                    <img [src]="skill.icon" [alt]="skill.name + ' icon'" class="skill-icon" />
+                    <span class="skill-name">{{ skill.name }}</span>
                   </div>
                 </div>
               </div>
