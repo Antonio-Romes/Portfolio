@@ -175,71 +175,9 @@
 
       .card-header {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: flex-start;
         margin-bottom: 1.5rem;
-
-        .experience-meta {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 1rem;
-          align-items: center;
-
-          @media (max-width: 480px) {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.5rem;
-          }
-
-          .experience-year {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-          }
-
-          .experience-duration {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            background: var(--surface-color);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-weight: 500;
-          }
-
-          .experience-type {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            padding: 0.25rem 0.5rem;
-            border-radius: 12px;
-            border: 1px solid;
-
-            &.full-time {
-              color: var(--success-color);
-              border-color: var(--success-color);
-              background: rgba(var(--success-rgb), 0.1);
-            }
-
-            &.part-time {
-              color: var(--warning-color);
-              border-color: var(--warning-color);
-              background: rgba(var(--warning-rgb), 0.1);
-            }
-
-            &.freelance {
-              color: var(--info-color);
-              border-color: var(--info-color);
-              background: rgba(var(--info-rgb), 0.1);
-            }
-
-            &.internship {
-              color: var(--primary-color);
-              border-color: var(--primary-color);
-              background: rgba(var(--primary-rgb), 0.1);
-            }
-          }
-        }
 
         .experience-current {
           .current-badge {
@@ -317,8 +255,7 @@
           font-size: 1rem;
         }
 
-        .responsibilities,
-        .achievements {
+        .responsibilities {
           margin-bottom: 1.5rem;
 
           h4 {
@@ -349,27 +286,6 @@
                 left: 0;
                 color: var(--primary-color);
                 font-weight: 600;
-              }
-            }
-          }
-
-          &.achievements {
-            .achievements-list {
-              li {
-                display: flex;
-                align-items: flex-start;
-                gap: 0.5rem;
-                padding-left: 0;
-
-                &::before {
-                  display: none;
-                }
-
-                svg {
-                  color: var(--success-color);
-                  margin-top: 0.125rem;
-                  flex-shrink: 0;
-                }
               }
             }
           }

@@ -30,11 +30,6 @@
           <div class="timeline-content">
             <div class="experience-card">
               <div class="card-header">
-                <div class="experience-meta">
-                  <span class="experience-year">{{ exp.year }}</span>
-                  <span class="experience-duration">{{ exp.duration }}</span>
-                  <span class="experience-type" [class]="exp.type">{{ exp.type | titlecase }}</span>
-                </div>
                 <div class="experience-current" *ngIf="exp.current">
                   <span class="current-badge">Atual</span>
                 </div>
@@ -62,18 +57,6 @@
                   <h4>Principais Responsabilidades:</h4>
                   <ul>
                     <li *ngFor="let responsibility of exp.responsibilities">{{ responsibility }}</li>
-                  </ul>
-                </div>
-
-                <div class="achievements" *ngIf="exp.achievements.length">
-                  <h4>Conquistas:</h4>
-                  <ul class="achievements-list">
-                    <li *ngFor="let achievement of exp.achievements" class="achievement-item">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="20,6 9,17 4,12"/>
-                      </svg>
-                      {{ achievement }}
-                    </li>
                   </ul>
                 </div>
 
