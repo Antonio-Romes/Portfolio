@@ -1,0 +1,231 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Import AOS styles */
+@import 'aos/dist/aos.css';
+
+/* About Section Styles */
+.about-section {
+  background: var(--surface-color);
+}
+
+.about-section .section-header .section-title {
+  /* Main title: "Conheça mais sobre mim" */
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-3);
+}
+
+.about-section .section-header .section-subtitle {
+  /* Subtitle: "Sobre Antonio Romes" */
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: var(--spacing-6);
+}
+
+.about-section .about-content {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-section .about-main {
+  width: 100%;
+}
+
+.about-section .about-text .intro-card {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  background: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: var(--spacing-6);
+  margin-bottom: var(--spacing-8);
+  transition: all 0.3s ease;
+}
+
+.about-section .about-text .intro-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+.about-section .about-text .intro-card .intro-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  color: white;
+  flex-shrink: 0;
+}
+
+.about-section .about-text .intro-card .intro-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.about-section .about-text .intro-card .intro-content h3 {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.about-section .about-text .intro-card .intro-content p {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+}
+
+.about-section .about-text .description-content p {
+  font-size: var(--font-size-base);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-6);
+  color: var(--text-secondary);
+}
+
+.about-section .about-text .description-content p.highlight-text {
+  font-size: var(--font-size-lg);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-8);
+}
+
+.about-section .about-text .description-content p .name-highlight {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.about-section .about-text .about-description {
+  margin-bottom: var(--spacing-8);
+}
+
+.about-section .about-text .about-description .intro {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-6);
+}
+
+.about-section .about-text .about-description p {
+  font-size: var(--font-size-base);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-4);
+}
+
+.about-section .about-text .about-description p strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Skills Section in main content */
+.about-section .about-text .skills-section {
+  margin-top: var(--spacing-12);
+}
+
+.about-section .about-text .skills-section .skills-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-6);
+}
+
+.about-section .about-text .skills-section .skills-title svg {
+  color: var(--primary-color);
+}
+
+.about-section .about-text .skills-section .skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--spacing-4);
+}
+
+@media (max-width: 768px) {
+  .about-section .about-text .skills-section .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-3);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .about-section .about-text .skills-section .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-4);
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-section .about-text .skills-section .skills-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--spacing-4);
+  }
+}
+
+.about-section .about-text .skills-section .skills-grid .skill-item {
+  background: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: var(--spacing-4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.about-section .about-text .skills-section .skills-grid .skill-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px var(--shadow-color);
+  border-color: var(--primary-color);
+}
+
+.about-section .about-text .skills-section .skills-grid .skill-item:hover .skill-content .skill-icon {
+  transform: scale(1.1);
+}
+
+.about-section .about-text .skills-section .skills-grid .skill-item .skill-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-3);
+}
+
+.about-section .about-text .skills-section .skills-grid .skill-item .skill-content .skill-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+}
+
+@media (max-width: 768px) {
+  .about-section .about-text .skills-section .skills-grid .skill-item .skill-content .skill-icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.about-section .about-text .skills-section .skills-grid .skill-item .skill-content .skill-name {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.about-section .about-text .skills-section .skills-grid .skill-item:hover .skill-content .skill-name {
+  color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .about-section .section-header .section-title {
+    font-size: var(--font-size-2xl);
+  }
+}

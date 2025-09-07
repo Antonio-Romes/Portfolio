@@ -8,7 +8,7 @@ import { ThemeService } from '../../services/theme.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss'],
+  styleUrls: ['./footer.component.css'],
 })
 export class FooterComponent {
   private isBrowser: boolean;

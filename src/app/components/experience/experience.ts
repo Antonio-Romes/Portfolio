@@ -7,7 +7,7 @@ import { ScrollService } from '../../services/scroll.service';
   selector: 'app-experience',
   imports: [CommonModule],
   templateUrl: './experience.html',
-  styleUrl: './experience.scss'
+  styleUrl: './experience.css'
 })
 export class Experience implements OnInit {
   experiences: ExperienceInterface[] = [];

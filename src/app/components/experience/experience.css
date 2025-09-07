@@ -1,0 +1,402 @@
+.experience-section {
+  padding: 5rem 0;
+  background: var(--background-color);
+  min-height: 100vh;
+}
+
+.experience-section .section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.experience-section .section-header .section-subtitle {
+  color: var(--primary-color);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.experience-section .section-header .section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .experience-section .section-header .section-title {
+    font-size: 2rem;
+  }
+}
+
+.experience-section .section-header .section-description {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.experience-section .experience-content {
+  margin-top: 3rem;
+}
+
+@media (max-width: 1200px) {
+  .experience-section .experience-content {
+    margin-top: 2.5rem;
+  }
+}
+
+@media (max-width: 968px) {
+  .experience-section .experience-content {
+    margin-top: 2rem;
+  }
+}
+
+/* Timeline Styles */
+.experience-section .experience-timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.experience-section .experience-timeline .timeline-item {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+  .experience-section .experience-timeline .timeline-item {
+    grid-template-columns: 50px 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.experience-section .experience-timeline .timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.experience-section .experience-timeline .timeline-marker {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+.experience-section .experience-timeline .timeline-marker .timeline-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
+}
+
+@media (max-width: 768px) {
+  .experience-section .experience-timeline .timeline-marker .timeline-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.experience-section .experience-timeline .timeline-marker .timeline-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 768px) {
+  .experience-section .experience-timeline .timeline-marker .timeline-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.experience-section .experience-timeline .timeline-marker .timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 60px;
+  bottom: -3rem;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--border-color), transparent);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .experience-section .experience-timeline .timeline-marker .timeline-line {
+    top: 50px;
+    bottom: -2rem;
+  }
+}
+
+.experience-section .experience-timeline .timeline-content {
+  padding-top: 0.5rem;
+}
+
+.experience-section .experience-timeline .experience-card {
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: var(--shadow-light);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .experience-section .experience-timeline .experience-card {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+}
+
+.experience-section .experience-timeline .experience-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--primary-color);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.experience-section .experience-timeline .experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--primary-color);
+}
+
+.experience-section .experience-timeline .experience-card:hover::before {
+  opacity: 1;
+}
+
+.experience-section .experience-timeline .experience-card:hover .timeline-marker .timeline-icon {
+  transform: scale(1.1);
+  background: var(--primary-dark);
+}
+
+.experience-section .experience-timeline .experience-card .card-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.experience-section .experience-timeline .experience-card .card-header .experience-current .current-badge {
+  background: var(--success-color);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(var(--success-rgb), 0.3);
+}
+
+.experience-section .experience-timeline .experience-card .card-body .experience-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+  .experience-section .experience-timeline .experience-card .card-body .experience-title {
+    font-size: 1.25rem;
+  }
+}
+
+.experience-section .experience-timeline .experience-card .card-body .company-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.experience-section .experience-timeline .experience-card .card-body .company-info .company-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.125rem;
+  transition: all 0.3s ease;
+}
+
+.experience-section .experience-timeline .experience-card .card-body .company-info .company-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.experience-section .experience-timeline .experience-card .card-body .company-info .company-name {
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--text-primary);
+}
+
+.experience-section .experience-timeline .experience-card .card-body .company-info .location {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.experience-section .experience-timeline .experience-card .card-body .company-info .location::before {
+  content: '•';
+  position: absolute;
+  left: 0.5rem;
+  color: var(--border-color);
+}
+
+.experience-section .experience-timeline .experience-card .card-body .experience-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.experience-section .experience-timeline .experience-card .card-body .responsibilities {
+  margin-bottom: 1.5rem;
+}
+
+.experience-section .experience-timeline .experience-card .card-body .responsibilities h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.experience-section .experience-timeline .experience-card .card-body .responsibilities ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.experience-section .experience-timeline .experience-card .card-body .responsibilities ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.experience-section .experience-timeline .experience-card .card-body .responsibilities ul li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.experience-section .experience-timeline .experience-card .card-body .technologies h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.experience-section .experience-timeline .experience-card .card-body .technologies .tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.experience-section .experience-timeline .experience-card .card-body .technologies .tech-stack .tech-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--surface-color);
+  color: var(--text-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  .experience-section .experience-timeline .experience-card .card-body .technologies .tech-stack .tech-tag {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}
+
+.experience-section .experience-timeline .experience-card .card-body .technologies .tech-stack .tech-tag .tech-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.experience-section .experience-timeline .experience-card .card-body .technologies .tech-stack .tech-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-color);
+}
+
+.experience-section .experience-timeline .experience-card .card-body .technologies .tech-stack .tech-tag.frontend {
+  border-color: var(--primary-color);
+  background: rgba(var(--primary-rgb), 0.05);
+}
+
+.experience-section .experience-timeline .experience-card .card-body .technologies .tech-stack .tech-tag.backend {
+  border-color: var(--success-color);
+  background: rgba(var(--success-rgb), 0.05);
+}
+
+.experience-section .experience-timeline .experience-card .card-body .technologies .tech-stack .tech-tag.database {
+  border-color: var(--warning-color);
+  background: rgba(var(--warning-rgb), 0.05);
+}
+
+.experience-section .experience-timeline .experience-card .card-body .technologies .tech-stack .tech-tag.tools {
+  border-color: var(--info-color);
+  background: rgba(var(--info-rgb), 0.05);
+}
+
+.experience-section .experience-timeline .experience-card .card-body .technologies .tech-stack .tech-tag.cloud {
+  border-color: var(--secondary-color);
+  background: rgba(var(--secondary-rgb), 0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 3rem 0;
+  }
+
+  .experience-section .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .experience-section .experience-content {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-section {
+    padding: 2rem 0;
+  }
+}

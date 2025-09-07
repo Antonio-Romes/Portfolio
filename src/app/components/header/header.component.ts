@@ -8,7 +8,7 @@ import { ThemeService } from '../../services/theme.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   isMenuOpen = false;

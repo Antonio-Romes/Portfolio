@@ -25,7 +25,7 @@ interface ExtendedProject {
   standalone: true,
   imports: [CommonModule],
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.scss'],
+  styleUrls: ['./projects.component.css'],
 })
 export class ProjectsComponent {
   selectedFilter = 'all';

@@ -1,0 +1,804 @@
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-20) 0;
+  background: var(--background-color);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background decoration */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 100%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.05) 0%, transparent 70%);
+  z-index: 0;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
+}
+
+.hero-section .hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 80vh;
+  width: 100%;
+}
+
+/* Centered 50% Width Container */
+.hero-section .hero-main-container {
+  width: 50%;
+  max-width: 600px;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+/* Centered 50% Width Container Styles */
+.hero-section .hero-main-container .greeting-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+  padding: var(--spacing-2) var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+  box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+.hero-section .hero-main-container .greeting-badge .badge-icon {
+  font-size: var(--font-size-lg);
+  animation: wave 2s ease-in-out infinite;
+}
+
+.hero-section .hero-main-container .greeting-badge .badge-text {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.hero-section .hero-main-container .hero-title {
+  font-family: var(--font-family-secondary);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-6);
+}
+
+.hero-section .hero-main-container .hero-title .highlight-name {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.hero-section .hero-main-container .hero-title .highlight-name::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-radius: 2px;
+  opacity: 0.3;
+}
+
+.hero-section .hero-main-container .typing-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-8);
+  min-height: 60px;
+}
+
+.hero-section .hero-main-container .typing-wrapper .typing-prefix {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.hero-section .hero-main-container .typing-wrapper .typing-text {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-section .hero-main-container .typing-wrapper .typing-cursor {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--primary-color);
+  animation: blink 1.2s infinite;
+  opacity: 1;
+}
+
+.hero-section .hero-main-container .typing-wrapper .typing-cursor.typing {
+  animation: none;
+  opacity: 1;
+}
+
+.hero-section .hero-main-container .hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-10);
+}
+
+.hero-section .hero-main-container .hero-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-4) var(--spacing-6);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  border-radius: 12px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section .hero-main-container .hero-actions .btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.hero-section .hero-main-container .hero-actions .btn:hover::before {
+  left: 100%;
+}
+
+.hero-section .hero-main-container .hero-actions .btn.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+}
+
+.hero-section .hero-main-container .hero-actions .btn.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4);
+}
+
+.hero-section .hero-main-container .hero-actions .btn.btn-primary:active {
+  transform: translateY(-1px);
+}
+
+.hero-section .hero-main-container .hero-actions .btn.btn-outline {
+  background: var(--surface-elevated);
+  color: var(--primary-color);
+  border: 2px solid var(--border-color);
+  box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+.hero-section .hero-main-container .hero-actions .btn.btn-outline:hover {
+  border-color: var(--primary-color);
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.3);
+}
+
+.hero-section .hero-main-container .social-links .social-label {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-3);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hero-section .hero-main-container .social-links .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-3);
+}
+
+.hero-section .hero-main-container .social-links .social-icons .social-link {
+  width: 48px;
+  height: 48px;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section .hero-main-container .social-links .social-icons .social-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hero-section .hero-main-container .social-links .social-icons .social-link svg {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.hero-section .hero-main-container .social-links .social-icons .social-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+.hero-section .hero-main-container .social-links .social-icons .social-link:hover::before {
+  opacity: 1;
+}
+
+.hero-section .hero-main-container .social-links .social-icons .social-link:hover svg {
+  color: white;
+  transform: scale(1.1);
+}
+
+.hero-section .hero-main-container .social-links .social-icons .social-link.github:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section .hero-main-container .social-links .social-icons .social-link.linkedin:hover {
+  box-shadow: 0 8px 25px rgba(0, 119, 181, 0.3);
+}
+
+.hero-section .hero-main-container .social-links .social-icons .social-link.instagram:hover {
+  box-shadow: 0 8px 25px rgba(225, 48, 108, 0.3);
+}
+
+/* Floating Technology Icons Around Content */
+.hero-section .floating-tech-icons {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-section .floating-tech-icons .floating-tech-icon {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 30px var(--shadow-color);
+  animation: float 8s ease-in-out infinite;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.hero-section .floating-tech-icons .floating-tech-icon svg {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+}
+
+.hero-section .floating-tech-icons .floating-tech-icon:hover {
+  transform: translateY(-8px) scale(1.15);
+  box-shadow: 0 15px 40px var(--shadow-color);
+}
+
+/* LEFT SIDE ICONS (4 icons) */
+
+/* SQL - Top Left */
+.hero-section .floating-tech-icons .floating-tech-icon.sql-icon {
+  top: 15%;
+  left: 8%;
+  animation-delay: 0s;
+}
+
+.hero-section .floating-tech-icons .floating-tech-icon.sql-icon svg {
+  color: #336791;
+}
+
+.hero-section .floating-tech-icons .floating-tech-icon.sql-icon:hover {
+  background: #336791;
+}
+
+.hero-section .floating-tech-icons .floating-tech-icon.sql-icon:hover svg {
+  color: white;
+}
+
+/* C# - Upper Middle Left */
+.hero-section .floating-tech-icons .floating-tech-icon.csharp-icon {
+  top: 35%;
+  left: 5%;
+  animation-delay: 1.4s;
+}
+
+.hero-section .floating-tech-icons .floating-tech-icon.csharp-icon svg {
+  color: #239120;
+}
+
+.hero-section .floating-tech-icons .floating-tech-icon.csharp-icon:hover {
+  background: #239120;
+}
+
+.hero-section .floating-tech-icons .floating-tech-icon.csharp-icon:hover svg {
+  color: white;
+}
+
+/* CSS3 - Lower Middle Left */
+.hero-section .floating-tech-icons .floating-tech-icon.css-icon {
+  top: 55%;
+  left: 8%;
+  animation-delay: 2.8s;
+}
+
+.hero-section .floating-tech-icons .floating-tech-icon.css-icon svg {
+  color: #1572b6;
+}
+
+.hero-section .floating-tech-icons .floating-tech-icon.css-icon:hover {
+  background: #1572b6;
+}
+
+.hero-section .floating-tech-icons .floating-tech-icon.css-icon:hover svg {
+  color: white;
+}
+
+/* Git - Bottom Left */
+.hero-section .floating-tech-icons .floating-tech-icon.git-icon {
+  top: 75%;
+  left: 12%;
+  animation-delay: 4.2s;
+}
+
+.hero-section .floating-tech-icons .floating-tech-icon.git-icon svg {
+  color: #f05032;
+}
+
+.hero-section .floating-tech-icons .floating-tech-icon.git-icon:hover {
+  background: #f05032;
+}
+
+.hero-section .floating-tech-icons .floating-tech-icon.git-icon:hover svg {
+  color: white;
+}
+
+/* RIGHT SIDE ICONS (4 icons) */
+
+/* Java - Top Right */
+.hero-section .floating-tech-icons .floating-tech-icon.java-icon {
+  top: 15%;
+  right: 8%;
+  animation-delay: 0.7s;
+}
+
+.hero-section .floating-tech-icons .floating-tech-icon.java-icon svg {
+  color: #f89820;
+}
+
+.hero-section .floating-tech-icons .floating-tech-icon.java-icon:hover {
+  background: #f89820;
+}
+
+.hero-section .floating-tech-icons .floating-tech-icon.java-icon:hover svg {
+  color: white;
+}
+
+/* JavaScript - Upper Middle Right */
+.hero-section .floating-tech-icons .floating-tech-icon.javascript-icon {
+  top: 35%;
+  right: 5%;
+  animation-delay: 2.1s;
+}
+
+.hero-section .floating-tech-icons .floating-tech-icon.javascript-icon svg {
+  color: #f7df1e;
+}
+
+.hero-section .floating-tech-icons .floating-tech-icon.javascript-icon:hover {
+  background: #f7df1e;
+}
+
+.hero-section .floating-tech-icons .floating-tech-icon.javascript-icon:hover svg {
+  color: black;
+}
+
+/* TypeScript - Lower Middle Right */
+.hero-section .floating-tech-icons .floating-tech-icon.typescript-icon {
+  top: 55%;
+  right: 8%;
+  animation-delay: 3.5s;
+}
+
+.hero-section .floating-tech-icons .floating-tech-icon.typescript-icon svg {
+  color: #3178c6;
+}
+
+.hero-section .floating-tech-icons .floating-tech-icon.typescript-icon:hover {
+  background: #3178c6;
+}
+
+.hero-section .floating-tech-icons .floating-tech-icon.typescript-icon:hover svg {
+  color: white;
+}
+
+/* Angular - Bottom Right */
+.hero-section .floating-tech-icons .floating-tech-icon.angular-icon {
+  top: 75%;
+  right: 12%;
+  animation-delay: 4.9s;
+}
+
+.hero-section .floating-tech-icons .floating-tech-icon.angular-icon svg {
+  color: #dd1b16;
+}
+
+.hero-section .floating-tech-icons .floating-tech-icon.angular-icon:hover {
+  background: #dd1b16;
+}
+
+.hero-section .floating-tech-icons .floating-tech-icon.angular-icon:hover svg {
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-section .floating-tech-icons .floating-tech-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .hero-section .floating-tech-icons .floating-tech-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* LEFT SIDE ICONS - Tablet adjustments */
+  .hero-section .floating-tech-icons .floating-tech-icon.sql-icon {
+    top: 15%;
+    left: 6%;
+  }
+
+  .hero-section .floating-tech-icons .floating-tech-icon.csharp-icon {
+    top: 35%;
+    left: 4%;
+  }
+
+  .hero-section .floating-tech-icons .floating-tech-icon.css-icon {
+    top: 55%;
+    left: 6%;
+  }
+
+  .hero-section .floating-tech-icons .floating-tech-icon.git-icon {
+    top: 75%;
+    left: 10%;
+  }
+
+  /* RIGHT SIDE ICONS - Tablet adjustments */
+  .hero-section .floating-tech-icons .floating-tech-icon.java-icon {
+    top: 15%;
+    right: 6%;
+  }
+
+  .hero-section .floating-tech-icons .floating-tech-icon.javascript-icon {
+    top: 35%;
+    right: 4%;
+  }
+
+  .hero-section .floating-tech-icons .floating-tech-icon.typescript-icon {
+    top: 55%;
+    right: 6%;
+  }
+
+  .hero-section .floating-tech-icons .floating-tech-icon.angular-icon {
+    top: 75%;
+    right: 10%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: var(--spacing-12) 0;
+  }
+
+  .hero-section .hero-content {
+    min-height: 70vh;
+  }
+
+  .hero-section .hero-main-container {
+    width: 70%;
+    max-width: 500px;
+    padding: 0 2rem;
+  }
+
+  .hero-section .hero-main-container .hero-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-section .hero-main-container .social-links .social-icons {
+    justify-content: center;
+  }
+
+  .hero-section .floating-tech-icons .floating-tech-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .hero-section .floating-tech-icons .floating-tech-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* LEFT SIDE ICONS - Tablet adjustments */
+  .hero-section .floating-tech-icons .floating-tech-icon.sql-icon {
+    top: 15%;
+    left: 5%;
+  }
+
+  .hero-section .floating-tech-icons .floating-tech-icon.csharp-icon {
+    top: 35%;
+    left: 3%;
+  }
+
+  .hero-section .floating-tech-icons .floating-tech-icon.css-icon {
+    top: 55%;
+    left: 5%;
+  }
+
+  .hero-section .floating-tech-icons .floating-tech-icon.git-icon {
+    top: 75%;
+    left: 8%;
+  }
+
+  /* RIGHT SIDE ICONS - Tablet adjustments */
+  .hero-section .floating-tech-icons .floating-tech-icon.java-icon {
+    top: 15%;
+    right: 5%;
+  }
+
+  .hero-section .floating-tech-icons .floating-tech-icon.javascript-icon {
+    top: 35%;
+    right: 3%;
+  }
+
+  .hero-section .floating-tech-icons .floating-tech-icon.typescript-icon {
+    top: 55%;
+    right: 5%;
+  }
+
+  .hero-section .floating-tech-icons .floating-tech-icon.angular-icon {
+    top: 75%;
+    right: 8%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section .hero-main-container {
+    width: 90%;
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .hero-section .hero-main-container .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-section .hero-main-container .typing-wrapper {
+    flex-direction: column;
+    gap: var(--spacing-1);
+  }
+
+  .hero-section .hero-main-container .typing-wrapper .typing-prefix,
+  .hero-section .hero-main-container .typing-wrapper .typing-text {
+    font-size: var(--font-size-lg);
+  }
+
+  .hero-section .hero-main-container .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-section .hero-main-container .hero-actions .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .hero-section .floating-tech-icons .floating-tech-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hero-section .floating-tech-icons .floating-tech-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* LEFT SIDE ICONS - Mobile adjustments */
+  .hero-section .floating-tech-icons .floating-tech-icon.sql-icon {
+    top: 18%;
+    left: 3%;
+  }
+
+  .hero-section .floating-tech-icons .floating-tech-icon.csharp-icon {
+    top: 38%;
+    left: 1%;
+  }
+
+  .hero-section .floating-tech-icons .floating-tech-icon.css-icon {
+    top: 58%;
+    left: 3%;
+  }
+
+  .hero-section .floating-tech-icons .floating-tech-icon.git-icon {
+    top: 78%;
+    left: 6%;
+  }
+
+  /* RIGHT SIDE ICONS - Mobile adjustments */
+  .hero-section .floating-tech-icons .floating-tech-icon.java-icon {
+    top: 18%;
+    right: 3%;
+  }
+
+  .hero-section .floating-tech-icons .floating-tech-icon.javascript-icon {
+    top: 38%;
+    right: 1%;
+  }
+
+  .hero-section .floating-tech-icons .floating-tech-icon.typescript-icon {
+    top: 58%;
+    right: 3%;
+  }
+
+  .hero-section .floating-tech-icons .floating-tech-icon.angular-icon {
+    top: 78%;
+    right: 6%;
+  }
+}
+
+/* Animations */
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(15deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-25px) rotate(2deg);
+  }
+  66% {
+    transform: translateY(-15px) rotate(-2deg);
+  }
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(8px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(8px) rotate(-360deg);
+  }
+}
+
+@keyframes orbitReverse {
+  0% {
+    transform: rotate(0deg) translateX(-8px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg) translateX(-8px) rotate(360deg);
+  }
+}
+
+@keyframes profileFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+@keyframes dotPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  53%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40%,
+  43% {
+    transform: translateY(-10px);
+  }
+  70% {
+    transform: translateY(-5px);
+  }
+}
