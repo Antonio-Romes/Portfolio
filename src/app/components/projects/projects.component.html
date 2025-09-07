@@ -92,8 +92,8 @@
         <!-- Three-Column Layout Container -->
         <div class="project-card-content">
           <!-- Left Column: Image -->
-          <div class="project-image-container" *ngIf="project.category !== 'api'">
-            <img [src]="project.imageUrl" 
+          <div class="project-image-container">
+            <img [src]="project.category === 'api' ? 'img/api-visual.svg' : project.imageUrl" 
                  [alt]="project.title" 
                  class="project-image" 
                  loading="lazy">
