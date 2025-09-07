@@ -143,29 +143,29 @@
       
       .skills-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        gap: var(--spacing-6);
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: var(--spacing-4);
         
         @media (max-width: 768px) {
           grid-template-columns: repeat(2, 1fr);
-          gap: var(--spacing-4);
+          gap: var(--spacing-3);
         }
         
         @media (min-width: 768px) and (max-width: 1024px) {
-          grid-template-columns: repeat(3, 1fr);
-          gap: var(--spacing-5);
+          grid-template-columns: repeat(4, 1fr);
+          gap: var(--spacing-4);
         }
         
         @media (min-width: 1024px) {
-          grid-template-columns: repeat(3, 1fr);
-          gap: var(--spacing-6);
+          grid-template-columns: repeat(5, 1fr);
+          gap: var(--spacing-4);
         }
         
         .skill-item {
           background: var(--background-color);
           border: 1px solid var(--border-color);
-          border-radius: 12px;
-          padding: var(--spacing-6);
+          border-radius: 10px;
+          padding: var(--spacing-4);
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           cursor: pointer;
           
@@ -184,23 +184,23 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            gap: var(--spacing-4);
+            gap: var(--spacing-3);
             
             .skill-icon {
-              width: 48px;
-              height: 48px;
+              width: 40px;
+              height: 40px;
               object-fit: contain;
               transition: transform 0.3s ease;
               filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
               
               @media (max-width: 768px) {
-                width: 40px;
-                height: 40px;
+                width: 32px;
+                height: 32px;
               }
             }
             
             .skill-name {
-              font-size: var(--font-size-base);
+              font-size: var(--font-size-sm);
               font-weight: 600;
               color: var(--text-primary);
               margin: 0;

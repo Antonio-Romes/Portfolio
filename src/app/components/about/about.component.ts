@@ -26,6 +26,7 @@ export class AboutComponent {
 
   // Top skills for skills section
   topSkills: Skill[] = [
+    // Current skills (8)
     { name: 'Angular', icon: 'icons/angular.svg' },
     { name: 'TypeScript', icon: 'icons/typescript.svg' },
     { name: 'C#', icon: 'icons/csharp-simple.svg' },
@@ -34,5 +35,13 @@ export class AboutComponent {
     { name: 'Git', icon: 'icons/git.svg' },
     { name: 'VB.NET', icon: 'icons/vbnet.svg' },
     { name: 'SQL Server', icon: 'icons/sql.svg' },
+    
+    // New skills added (6)
+    { name: 'HTML5', icon: 'icons/html5.svg' },
+    { name: 'CSS3', icon: 'icons/css3.svg' },
+    { name: 'Bootstrap', icon: 'icons/bootstrap.svg' },
+    { name: 'jQuery', icon: 'icons/jquery.svg' },
+    { name: 'Angular Material', icon: 'icons/devicon--angularmaterial.svg' },
+    { name: 'REST API', icon: 'icons/rest-api.svg' }
   ];
 }
