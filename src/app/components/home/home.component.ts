@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
     if (this.isBrowser) {
       // Create download link
       const link = document.createElement('a');
-      link.href = 'assets/pdf/Antonio-Romes-CV.pdf';
+      link.href = 'pdf/Antonio Romes.pdf';
       link.download = 'Antonio-Romes-CV.pdf';
       link.target = '_blank';
       document.body.appendChild(link);
